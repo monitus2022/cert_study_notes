@@ -1,5 +1,3 @@
-
-
 # AWS Certified AI Practitioner (AIF-C01)
 <a name="ai-practitioner-01"></a>
 

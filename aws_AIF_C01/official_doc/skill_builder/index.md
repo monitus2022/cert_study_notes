@@ -85,3 +85,13 @@ Let's get started with Domain 5, which covers security, compliance, and governan
 - [Task Statement 5.1: Explain methods to secure AI systems](5.1.md)
 - [Task Statement 5.2: Recognize governance and compliance regulations for AI systems](5.2.md)
 - [Additional resources for Domain 5](5.extra.md)
+
+# Conclusion
+
+Welcome back, and great job completing this course. I hope you have enjoyed this exam prep course for the AWS Certified AI Practitioner certification. Throughout the course, we have provided valuable exam basics and guidance on how to approach the various domains from the exam guide that will be covered in the certification exam. As a reminder, this course was not intended to teach you what will be on the exam, but was intended to provide you a method for self-evaluation to determine your level of readiness to take the certification exam.
+
+Use the information provided in this course to help guide you in your studies and preparations. Do not forget to get some hands-on experience too. AWS provides official practice exams for this certification. And similar to this course, practice exams will help you assess your readiness for the exam and highlight areas where you might still have gaps in your knowledge.
+
+Let's cover a few test-taking tips. First, read and understand the question before looking at the answer options. Identify the keywords, phrases, and qualifiers. This is very important. If the question is looking for the lowest cost option and you are thinking of the most resilient solution, you might choose a different answer. Eliminate some of the answer options based on what you know about the topic. Compare and contrast the remaining options, keeping in mind the key phrases and qualifiers identified. If you are spending too much time, pick your best guess and flag the question for later review. You get zero points if you leave it blank. Remember that the AWS exam prep team also has other exam prep courses.
+
+If you are looking for more in-depth and guided instructions and courses, you can also scan the QR code to find many great courses from AWS Training and Certification from the foundational, associate, professional, and specialty levels. For next steps, I recommend studying any areas that you have identified as gaps. When you are ready to take the test, visit our certification site to schedule your exam. Good luck with your studies and preparations and good luck on your exam. Feel free to reach out, and remember, AWS is here for you. We are all cheering for you. One last quick note, please complete our feedback survey. Feedback is so important to ensure we are creating content that you need. Good luck with your exam. 
