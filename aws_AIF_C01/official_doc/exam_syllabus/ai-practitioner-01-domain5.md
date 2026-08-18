@@ -1,5 +1,3 @@
-
-
 # Content Domain 5: Security, Compliance, and Governance for AI Solutions
 <a name="ai-practitioner-01-domain5"></a>
 

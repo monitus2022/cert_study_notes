@@ -1,5 +1,3 @@
-
-
 # Content Domain 3: Applications of Foundation Models
 <a name="ai-practitioner-01-domain3"></a>
 

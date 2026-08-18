@@ -1,5 +1,3 @@
-
-
 # Content Domain 4: Guidelines for Responsible AI
 <a name="ai-practitioner-01-domain4"></a>
 

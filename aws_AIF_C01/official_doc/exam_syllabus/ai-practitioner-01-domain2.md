@@ -1,5 +1,3 @@
-
-
 # Content Domain 2: Fundamentals of GenAI
 <a name="ai-practitioner-01-domain2"></a>
 
