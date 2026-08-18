@@ -11,3 +11,19 @@ For the third task statement, you'll describe the ML development lifecycle, whic
 - [Task Statement 1.1: Explain basic AI concepts and terminologies](1.1.md)
 - [Task Statement 1.2: Identify practical use cases for AI](1.2.md)
 - [Task Statement 1.3: Describe the ML development lifecycle](1.3.md)
+
+# Domain 2: Fundamentals of GenAI
+
+Let's get started with Domain 2, which covers the Fundamentals of Generative AI. For this domain, we will continue to talk about artificial intelligence and define generative AI. Domain 2 is broken into three tasks statements that we will discuss over the next few lessons. Task statement 2.1, explain the basic concepts of generative AI. Task statement 2.2, describe the capabilities and limitations of generative AI for solving business problems. Task statement 2.3, describe AWS infrastructure and technologies for building generative AI applications.
+
+For the first task statement, to explain the basic concepts of generative AI, you must understand the basic definitions and differences between AI and generative AI. Also, ensure you understand the different use cases for generative AI models and the foundational model lifecycle.
+
+The second task statement is to describe the capabilities and limitations of generative AI for solving business problems. You'll need to ensure that you understand how to use generative AI along with the potential advantages and risks. Also, ensure you understand different metrics and how to select the model to meet your requirements.
+
+The third task statement is to describe AWS infrastructure and technologies for building generative AI applications. For this task, ensure that you understand the AWS services and features that you can use to develop generative AI applications. Under task statement 2.2, you need to ensure that you understand the advantages of generative AI. For this task, ensure you understand the advantages of using AWS infrastructure and AWS generative AI services and the cost tradeoffs to build your applications.
+
+Over the next few videos, I will address each task statement individually, breaking down the knowledge and skills expected of you to be successful. Let's get started evaluating your readiness for the exam in the next lesson, where we will cover the first task statement from Domain 2. Task statement 2.1, explain the basic concepts of generative AI.
+
+- [Task Statement 2.1: Explain the basic concepts of generative AI](2.1.md)
+- [Task Statement 2.2: Understand the capabilities & limits of GenAI for solving business problems](2.2.md)
+- [Task Statement 2.3: Describe AWS infrastructure & technologies for building GenAI applications](2.3.md)
