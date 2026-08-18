@@ -1,0 +1,170 @@
+{
+  "name": "AIF-C01 Creator-Validator Question Generator",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "72b9d94d-9993-48f3-978b-e647ff2aff1d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.download_url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        448,
+        0
+      ],
+      "id": "d21b0a09-7419-40ee-9517-787f98c1e04f",
+      "name": "Get all official script files"
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/repos/monitus2022/cert_study_notes/contents/aws_AIF_C01/official_doc/skill_builder",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "876dae94-b94b-4d29-920a-060bb0f4d061",
+      "name": "Get all script file names"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-5.6-luna",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        704,
+        240
+      ],
+      "id": "eef5b2e4-4a3d-478c-ba93-ff9771439dc3",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "L86a3alI6YxT4tWN",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an AWS AI expert and your goal is to create readable exam notes for students taking AWS AI practioner exam. You are provided the objectives of a specific task statement covered by the exam, as well as the official transcript from an online course. Your goal is to create a highly detailed study notes that cover the key concepts as well as providing exam tips and traps. Here are the details:\n\n{{ $json.data }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        704,
+        0
+      ],
+      "id": "5ba75a41-6abf-40eb-9083-9dbe833e6f91",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1072,
+        0
+      ],
+      "id": "0cc5b8ae-a274-4ccb-8924-932668a6d689",
+      "name": "Convert to File"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get all script file names",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all script file names": {
+      "main": [
+        [
+          {
+            "node": "Get all official script files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get all official script files": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "7bf75d15-7da9-4bd0-beb8-5b664094412a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e775ce01950f6537410829465dbff7b50aa5a7a5772a3cc510fab2a18f414bba"
+  },
+  "nodeGroups": [],
+  "id": "jbbuAS4FGIMjY80A",
+  "tags": []
+}
