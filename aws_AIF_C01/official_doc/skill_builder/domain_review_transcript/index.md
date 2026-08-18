@@ -27,3 +27,28 @@ Over the next few videos, I will address each task statement individually, break
 - [Task Statement 2.1: Explain the basic concepts of generative AI](2.1.md)
 - [Task Statement 2.2: Understand the capabilities & limits of GenAI for solving business problems](2.2.md)
 - [Task Statement 2.3: Describe AWS infrastructure & technologies for building GenAI applications](2.3.md)
+
+# Domain 3: Applications of Foundation Models
+
+Let's get started with Domain 3, which covers application of foundation models. For this domain, we will continue to talk about foundation models. Under Domain 2, we talked about foundation models and their lifecycle. Remember that foundation models are pre-trained models that are ready to use. They are trained on massive datasets. They are large, deep learning neural networks that provide a starting point to develop machine learning models that power new applications more quickly and cost effectively.
+
+Let's ask a few questions. What is unique about foundation models? My first thought is adaptability, because these models can perform a wide range of tasks with a high degree of accuracy based on input prompts. Some tasks include natural language processing, NLP, question answering and image classification, but the size and general-purpose nature of foundation models also make them different from traditional machine learning models. Traditional ML models perform specific tasks like analyzing text for sentiment, classifying images, and forecasting trends. Here is another question.
+
+What are applications for foundation models? Answer, customer support, language translation, content generation, code generation, copywriting, image classification, high-resolution image creation and editing, video and audio generation, document extraction, healthcare, autonomous vehicles, and robotics.
+
+Domain 3 is broken into four task statements that we'll discuss over the next few lessons. Task statement 3.1. Describe design considerations for applications that use foundation models. Task statement 3.2, choose effective prompt engineering techniques. Task statement 3.3, describe the training and fine-tuning process for foundation models. Task statement 3.4, describe methods to evaluate foundation model performance.
+
+The first task statement is to describe design considerations for applications that use foundation models. For this task, you will need to understand how to choose your pre-trained model and the effect of inference parameters on your model responses. Also, ensure that you can define retrieval augmented generation, or RAG, and describe its business application with Amazon Bedrock. This task statement also covers the cost tradeoffs to foundation model customizations such as RAG, pre-training, fine-tuning, and more. We will also talk about AWS services that store embeddings within vector databases and the role of agents in multi-step tasks.
+
+The second task statement is to choose effective prompt engineering techniques. For this task statement, ensure that you understand the best practices, techniques, risks, and limitations of prompt engineering, and can describe the concepts and constructs of prompt engineering.
+
+The third task statement is to describe the training and fine-tuning process for foundation models. For this task statement, you must understand the elements and methods for training a foundation model and how to prepare your data to fine-tune a foundation model.
+
+The fourth task statement is to describe methods to evaluate foundation model performance. For this task, you must understand approaches and metrics to evaluate foundation model performance and how to determine whether the foundation model is meeting your business objectives.
+
+Over the next few videos, I will address each task statement individually, breaking down the knowledge and skills expected of you to be successful. Let's get started evaluating your readiness for the exam in the next lesson where we will cover the first task statement from Domain 3. 
+
+- [Task Statement 3.1: Describe design considerations for applications that use foundation models](3.1.md)
+- [Task Statement 3.2: Choose effective prompt engineering techniques](3.2.md)
+- [Task Statement 3.3: Describe the training and fine-tuning process for foundation models](3.3.md)
+- [Task Statement 3.4: Describe methods to evaluate foundation model performance](3.4.md)
