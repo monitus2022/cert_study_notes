@@ -99,6 +99,17 @@
       background-color: #e68a00;
     }
 
+    .btn-submit {
+      background-color: var(--accent-blue);
+      color: #000;
+      border: none;
+    }
+
+    .btn-submit:hover {
+      background-color: #0284c7;
+      color: #fff;
+    }
+
     .btn-danger {
       border-color: rgba(239, 68, 68, 0.4);
       color: #f87171;
@@ -306,8 +317,19 @@
     }
 
     .opt-btn:hover:not(:disabled) {
-      border-color: var(--accent-orange);
-      background-color: rgba(255, 153, 0, 0.03);
+      border-color: var(--accent-blue);
+      background-color: rgba(56, 189, 248, 0.03);
+    }
+
+    /* Selected state before submission */
+    .opt-btn.selected {
+      border-color: var(--accent-blue);
+      background-color: rgba(56, 189, 248, 0.12);
+    }
+
+    .opt-btn.selected .opt-letter {
+      background-color: var(--accent-blue);
+      color: #000;
     }
 
     .opt-btn:disabled {
@@ -328,26 +350,27 @@
       flex-shrink: 0;
     }
 
+    /* Revealed states post-submission */
     .opt-btn.correct {
-      background-color: var(--success-bg);
-      border-color: var(--success-border);
-      color: #f0fdf4;
+      background-color: var(--success-bg) !important;
+      border-color: var(--success-border) !important;
+      color: #f0fdf4 !important;
     }
 
     .opt-btn.correct .opt-letter {
-      background-color: var(--success-border);
-      color: #000;
+      background-color: var(--success-border) !important;
+      color: #000 !important;
     }
 
     .opt-btn.wrong {
-      background-color: var(--danger-bg);
-      border-color: var(--danger-border);
-      color: #fef2f2;
+      background-color: var(--danger-bg) !important;
+      border-color: var(--danger-border) !important;
+      color: #fef2f2 !important;
     }
 
     .opt-btn.wrong .opt-letter {
-      background-color: var(--danger-border);
-      color: #fff;
+      background-color: var(--danger-border) !important;
+      color: #fff !important;
     }
 
     .explanation-box {
@@ -386,6 +409,8 @@
       justify-content: space-between;
       align-items: center;
       margin-top: 24px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .summary-card {
@@ -526,8 +551,8 @@
         <div class="filter-group">
           <label style="font-size: 0.85rem; color: var(--text-muted);">Mode:</label>
           <select id="mode-select" onchange="applyFilters()">
-            <option value="practice">Practice Mode (Instant Feedback)</option>
-            <option value="exam">Exam Mode (Hide Answers Until Finish)</option>
+            <option value="practice">Practice Mode (Submit to See Solution)</option>
+            <option value="exam">Exam Mode (Hide Solution Until Finish)</option>
           </select>
 
           <label style="font-size: 0.85rem; color: var(--text-muted); margin-left: 10px;">Order:</label>
@@ -578,8 +603,11 @@
 
         <div class="nav-bar">
           <button class="btn" id="prev-btn" onclick="prevQuestion()" disabled>← Previous</button>
-          <button class="btn" onclick="exportAnkiCSV()" title="Export wrong questions for Anki">🎴 Export Missed to Anki CSV</button>
-          <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Next Question →</button>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-submit" id="submit-btn" onclick="submitAnswer()">Submit Answer 🎯</button>
+            <button class="btn" onclick="exportAnkiCSV()" title="Export wrong questions for Anki">🎴 Export Missed</button>
+            <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Next Question →</button>
+          </div>
         </div>
       </div>
     </div>
@@ -634,7 +662,8 @@
     let rawQuestions = [];
     let activeQuestions = [];
     let currentIndex = 0;
-    let userAnswers = {}; // idx -> selected option ('A','B','C','D')
+    let userAnswers = {};      // idx -> Set of selected options e.g. Set(['A', 'C'])
+    let submittedAnswers = {}; // idx -> boolean (whether question solution has been revealed)
     let flaggedQuestions = new Set();
 
     // DOM Elements
@@ -723,6 +752,7 @@
 
       rawQuestions = qList;
       userAnswers = {};
+      submittedAnswers = {};
       flaggedQuestions.clear();
       currentIndex = 0;
 
@@ -757,7 +787,6 @@
       });
     }
 
-    // Fisher-Yates shuffle implementation
     function shuffleArray(array) {
       const arr = [...array];
       for (let i = arr.length - 1; i > 0; i--) {
@@ -772,14 +801,12 @@
       const angleVal = document.getElementById('angle-filter').value;
       const orderVal = document.getElementById('order-select').value;
 
-      // Filter raw questions based on selected Topic / Angle
       let filtered = rawQuestions.filter(q => {
         const matchTS = tsVal === 'ALL' || q.task_statement_id === tsVal;
         const matchAngle = angleVal === 'ALL' || q.angle === angleVal;
         return matchTS && matchAngle;
       });
 
-      // Apply Fisher-Yates randomization if requested
       if (orderVal === 'random') {
         activeQuestions = shuffleArray(filtered);
       } else {
@@ -787,7 +814,8 @@
       }
 
       currentIndex = 0;
-      userAnswers = {}; // Reset session answers for new filtered/shuffled set
+      userAnswers = {};
+      submittedAnswers = {};
 
       if (activeQuestions.length === 0) {
         alert('No questions match the selected filter criteria.');
@@ -796,9 +824,28 @@
       renderCurrentQuestion();
     }
 
+    // Helper to parse correct answers into a Set (handles "A", "A, B", "AB", ["A","B"])
+    function getCorrectAnswerSet(ans) {
+      if (!ans) return new Set();
+      if (Array.isArray(ans)) return new Set(ans.map(a => String(a).trim().toUpperCase()));
+      const cleaned = String(ans).replace(/[^a-zA-Z]/g, '').toUpperCase();
+      return new Set(cleaned.split(''));
+    }
+
+    function areSetsEqual(setA, setB) {
+      if (setA.size !== setB.size) return false;
+      for (let elem of setA) {
+        if (!setB.has(elem)) return false;
+      }
+      return true;
+    }
+
     function renderCurrentQuestion() {
       const q = activeQuestions[currentIndex];
       const isExamMode = document.getElementById('mode-select').value === 'exam';
+      const isSubmitted = !!submittedAnswers[currentIndex];
+      const selectedSet = userAnswers[currentIndex] || new Set();
+      const correctSet = getCorrectAnswerSet(q.correct_answer);
 
       document.getElementById('q-current').textContent = currentIndex + 1;
       document.getElementById('q-total').textContent = activeQuestions.length;
@@ -829,8 +876,6 @@
         { key: 'D', text: q.option_D }
       ];
 
-      const selectedAnswer = userAnswers[currentIndex];
-
       options.forEach(opt => {
         const btn = document.createElement('button');
         btn.className = 'opt-btn';
@@ -845,34 +890,45 @@
         btn.appendChild(letter);
         btn.appendChild(textSpan);
 
-        btn.onclick = () => selectOption(opt.key);
+        btn.onclick = () => toggleOption(opt.key);
 
-        if (selectedAnswer) {
-          if (!isExamMode) {
-            btn.disabled = true;
-            if (opt.key === q.correct_answer) {
-              btn.classList.add('correct');
-            } else if (opt.key === selectedAnswer) {
-              btn.classList.add('wrong');
-            }
-          } else {
-            if (opt.key === selectedAnswer) {
-              btn.style.borderColor = 'var(--accent-orange)';
-              btn.style.backgroundColor = 'rgba(255,153,0,0.1)';
-            }
+        // Pre-submission selected styling
+        if (selectedSet.has(opt.key)) {
+          btn.classList.add('selected');
+        }
+
+        // Post-submission evaluation (Practice Mode)
+        if (isSubmitted && !isExamMode) {
+          btn.disabled = true;
+          if (correctSet.has(opt.key)) {
+            btn.classList.add('correct');
+          } else if (selectedSet.has(opt.key)) {
+            btn.classList.add('wrong');
           }
+        } else if (isExamMode && selectedSet.has(opt.key)) {
+          btn.style.borderColor = 'var(--accent-orange)';
+          btn.style.backgroundColor = 'rgba(255,153,0,0.1)';
         }
 
         container.appendChild(btn);
       });
 
-      // Explanation Box
+      // Submit & Explanation UI Handling
+      const submitBtn = document.getElementById('submit-btn');
       const expBox = document.getElementById('explanation-box');
-      if (selectedAnswer && !isExamMode) {
-        expBox.style.display = 'block';
-        document.getElementById('exp-body').textContent = q.explanation || 'No detailed explanation provided.';
-      } else {
+
+      if (isExamMode) {
+        submitBtn.style.display = 'none';
         expBox.style.display = 'none';
+      } else {
+        if (isSubmitted) {
+          submitBtn.style.display = 'none';
+          expBox.style.display = 'block';
+          document.getElementById('exp-body').textContent = q.explanation || 'No detailed explanation provided.';
+        } else {
+          submitBtn.style.display = 'inline-flex';
+          expBox.style.display = 'none';
+        }
       }
 
       // Nav buttons
@@ -885,8 +941,29 @@
       }
     }
 
-    function selectOption(letter) {
-      userAnswers[currentIndex] = letter;
+    function toggleOption(letter) {
+      if (submittedAnswers[currentIndex]) return; // Locked post-submit
+
+      if (!userAnswers[currentIndex]) {
+        userAnswers[currentIndex] = new Set();
+      }
+
+      const set = userAnswers[currentIndex];
+      if (set.has(letter)) {
+        set.delete(letter);
+      } else {
+        set.add(letter);
+      }
+      renderCurrentQuestion();
+    }
+
+    function submitAnswer() {
+      const selectedSet = userAnswers[currentIndex];
+      if (!selectedSet || selectedSet.size === 0) {
+        alert('Please select at least one option before submitting.');
+        return;
+      }
+      submittedAnswers[currentIndex] = true;
       renderCurrentQuestion();
     }
 
@@ -918,7 +995,9 @@
     function showSummary() {
       let correctCount = 0;
       activeQuestions.forEach((q, idx) => {
-        if (userAnswers[idx] === q.correct_answer) {
+        const userSet = userAnswers[idx] || new Set();
+        const correctSet = getCorrectAnswerSet(q.correct_answer);
+        if (areSetsEqual(userSet, correctSet)) {
           correctCount++;
         }
       });
@@ -950,6 +1029,7 @@
 
     function restartQuiz() {
       userAnswers = {};
+      submittedAnswers = {};
       currentIndex = 0;
       summaryView.style.display = 'none';
       quizView.style.display = 'block';
@@ -957,13 +1037,19 @@
     }
 
     function reviewMissedOnly() {
-      const missed = activeQuestions.filter((q, idx) => userAnswers[idx] !== q.correct_answer);
+      const missed = activeQuestions.filter((q, idx) => {
+        const userSet = userAnswers[idx] || new Set();
+        const correctSet = getCorrectAnswerSet(q.correct_answer);
+        return !areSetsEqual(userSet, correctSet);
+      });
+
       if (missed.length === 0) {
         alert('Great job! You scored 100%, no questions to review.');
         return;
       }
       activeQuestions = missed;
       userAnswers = {};
+      submittedAnswers = {};
       currentIndex = 0;
       summaryView.style.display = 'none';
       quizView.style.display = 'block';
@@ -975,6 +1061,7 @@
         rawQuestions = [];
         activeQuestions = [];
         userAnswers = {};
+        submittedAnswers = {};
         quizView.style.display = 'none';
         summaryView.style.display = 'none';
         landingView.style.display = 'block';
@@ -985,9 +1072,11 @@
     function exportAnkiCSV() {
       let csvContent = "Question,Answer,Explanation\n";
       activeQuestions.forEach((q, idx) => {
-        if (!userAnswers[idx] || userAnswers[idx] !== q.correct_answer) {
+        const userSet = userAnswers[idx] || new Set();
+        const correctSet = getCorrectAnswerSet(q.correct_answer);
+        if (!areSetsEqual(userSet, correctSet)) {
           const qText = `"${(q.question || '').replace(/"/g, '""')}<br><br>A) ${q.option_A}<br>B) ${q.option_B}<br>C) ${q.option_C}<br>D) ${q.option_D}"`;
-          const ansText = `"${q.correct_answer}"`;
+          const ansText = `"${Array.from(correctSet).join(', ')}"`;
           const expText = `"${(q.explanation || '').replace(/"/g, '""')}"`;
           csvContent += `${qText},${ansText},${expText}\n`;
         }
