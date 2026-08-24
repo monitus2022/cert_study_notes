@@ -1,5 +1,32 @@
 # AWS Certified Cloud Practitioner (CLF-C02) Complete Study Notes
 
+## Table of Contents
+- [AWS Certified Cloud Practitioner (CLF-C02) Complete Study Notes](#aws-certified-cloud-practitioner-clf-c02-complete-study-notes)
+  - [Table of Contents](#table-of-contents)
+  - [Domain 1: Cloud Concepts (24%)](#domain-1-cloud-concepts-24)
+    - [Task Statement 1.1: Define the benefits of the AWS Cloud](#task-statement-11-define-the-benefits-of-the-aws-cloud)
+    - [Task Statement 1.2: Identify design principles of the AWS Cloud](#task-statement-12-identify-design-principles-of-the-aws-cloud)
+    - [Task Statement 1.3: Understand the benefits of and strategies for migration to the AWS Cloud](#task-statement-13-understand-the-benefits-of-and-strategies-for-migration-to-the-aws-cloud)
+    - [Task Statement 1.4: Understand concepts of cloud economics](#task-statement-14-understand-concepts-of-cloud-economics)
+  - [Domain 2: Security and Compliance (30%)](#domain-2-security-and-compliance-30)
+    - [Task Statement 2.1: Understand the AWS shared responsibility model](#task-statement-21-understand-the-aws-shared-responsibility-model)
+    - [Task Statement 2.2: Understand AWS Cloud security, governance, and compliance concepts](#task-statement-22-understand-aws-cloud-security-governance-and-compliance-concepts)
+    - [Task Statement 2.3: Identify AWS access management capabilities](#task-statement-23-identify-aws-access-management-capabilities)
+    - [Task Statement 2.4: Identify components and resources for security](#task-statement-24-identify-components-and-resources-for-security)
+  - [Domain 3: Cloud Technology and Services (34%)](#domain-3-cloud-technology-and-services-34)
+    - [Task Statement 3.1: Define methods of deploying and operating in the AWS Cloud](#task-statement-31-define-methods-of-deploying-and-operating-in-the-aws-cloud)
+    - [Task Statement 3.2: Define the AWS global infrastructure](#task-statement-32-define-the-aws-global-infrastructure)
+    - [Task Statement 3.3: Identify AWS compute services](#task-statement-33-identify-aws-compute-services)
+    - [Task Statement 3.4: Identify AWS database services](#task-statement-34-identify-aws-database-services)
+    - [Task Statement 3.5: Identify AWS network services](#task-statement-35-identify-aws-network-services)
+    - [Task Statement 3.6: Identify AWS storage services](#task-statement-36-identify-aws-storage-services)
+    - [Task Statement 3.7: Identify AWS artificial intelligence and machine learning (AI/ML) services and analytics services](#task-statement-37-identify-aws-artificial-intelligence-and-machine-learning-aiml-services-and-analytics-services)
+    - [Task Statement 3.8: Identify services from other in-scope AWS service categories](#task-statement-38-identify-services-from-other-in-scope-aws-service-categories)
+  - [Domain 4: Billing, Pricing, and Support (12%)](#domain-4-billing-pricing-and-support-12)
+    - [Task Statement 4.1: Compare AWS pricing models](#task-statement-41-compare-aws-pricing-models)
+    - [Task Statement 4.2: Understand resources for billing, budget, and cost management](#task-statement-42-understand-resources-for-billing-budget-and-cost-management)
+    - [Task Statement 4.3: Identify AWS technical resources and AWS Support options](#task-statement-43-identify-aws-technical-resources-and-aws-support-options)
+
 ---
 
 ## Domain 1: Cloud Concepts (24%)
