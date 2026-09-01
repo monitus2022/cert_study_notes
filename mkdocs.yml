@@ -1,0 +1,7 @@
+site_name: Certification Study Notes
+docs_dir: 'docs'
+exclude_docs: |
+  README.md
+
+theme:
+  name: readthedocs
