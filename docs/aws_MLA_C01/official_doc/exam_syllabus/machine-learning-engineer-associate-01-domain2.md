@@ -4,6 +4,7 @@
 <a name="machine-learning-engineer-associate-01-domain2"></a>
 
 **Topics**
+
 - [Content Domain 2: ML Model Development](#content-domain-2-ml-model-development)
   - [Task 2.1: Choose a modeling approach](#task-21-choose-a-modeling-approach)
   - [Task 2.2: Train and refine models](#task-22-train-and-refine-models)
@@ -14,12 +15,14 @@
 <a name="machine-learning-engineer-associate-01-domain2-task1"></a>
 
 Knowledge of:
+
 + Capabilities and appropriate uses of ML algorithms to solve business problems
 + How to use AWS artificial intelligence (AI) services (for example, Amazon Translate, Amazon Transcribe, Amazon Rekognition, Amazon Bedrock) to solve specific business problems
 + How to consider interpretability during model selection or algorithm selection
 + Amazon SageMaker AI built-in algorithms and when to apply them
 
 Skills in:
+
 + Assessing available data and problem complexity to determine the feasibility of an ML solution
 + Comparing and selecting appropriate ML models or algorithms to solve specific problems
 + Choosing built-in algorithms, foundation models, and solution templates (for example, in SageMaker JumpStart and Amazon Bedrock)
@@ -30,6 +33,7 @@ Skills in:
 <a name="machine-learning-engineer-associate-01-domain2-task2"></a>
 
 Knowledge of:
+
 + Elements in the training process (for example, epoch, steps, batch size)
 + Methods to reduce model training time (for example, early stopping, distributed training)
 + Factors that influence model size
@@ -40,6 +44,7 @@ Knowledge of:
 + Methods to integrate models that were built outside SageMaker AI into SageMaker AI
 
 Skills in:
+
 + Using SageMaker AI built-in algorithms and common ML libraries to develop ML models
 + Using SageMaker AI script mode with SageMaker AI supported frameworks to train models (for example, TensorFlow, PyTorch)
 + Using custom datasets to fine-tune pre-trained models (for example, Amazon Bedrock, SageMaker JumpStart)
@@ -54,6 +59,7 @@ Skills in:
 <a name="machine-learning-engineer-associate-01-domain2-task3"></a>
 
 Knowledge of:
+
 + Model evaluation techniques and metrics (for example, confusion matrix, heat maps, F1 score, accuracy, precision, recall, Root Mean Square Error [RMSE], receiver operating characteristic [ROC], Area Under the ROC Curve [AUC])
 + Methods to create performance baselines
 + Methods to identify model overfitting and underfitting
@@ -61,6 +67,7 @@ Knowledge of:
 + Convergence issues
 
 Skills in:
+
 + Selecting and interpreting evaluation metrics and detecting model bias
 + Assessing tradeoffs between model performance, training time, and cost
 + Performing reproducible experiments by using AWS services

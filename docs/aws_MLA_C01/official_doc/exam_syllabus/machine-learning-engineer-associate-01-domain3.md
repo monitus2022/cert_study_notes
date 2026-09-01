@@ -4,6 +4,7 @@
 <a name="machine-learning-engineer-associate-01-domain3"></a>
 
 **Topics**
+
 - [Content Domain 3: Deployment and Orchestration of ML Workflows](#content-domain-3-deployment-and-orchestration-of-ml-workflows)
   - [Task 3.1: Select deployment infrastructure based on existing architecture and requirements](#task-31-select-deployment-infrastructure-based-on-existing-architecture-and-requirements)
   - [Task 3.2: Create and script infrastructure based on existing architecture and requirements](#task-32-create-and-script-infrastructure-based-on-existing-architecture-and-requirements)
@@ -14,6 +15,7 @@
 <a name="machine-learning-engineer-associate-01-domain3-task1"></a>
 
 Knowledge of:
+
 + Deployment best practices (for example, versioning, rollback strategies)
 + AWS deployment services (for example, Amazon SageMaker AI)
 + Methods to serve ML models in real time and in batches
@@ -23,6 +25,7 @@ Knowledge of:
 + Methods to optimize models on edge devices (for example, SageMaker Neo)
 
 Skills in:
+
 + Evaluating performance, cost, and latency tradeoffs
 + Choosing the appropriate compute environment for training and inference based on requirements (for example, GPU or CPU specifications, processor family, networking bandwidth)
 + Selecting the correct deployment orchestrator (for example, Apache Airflow, SageMaker Pipelines)
@@ -34,6 +37,7 @@ Skills in:
 <a name="machine-learning-engineer-associate-01-domain3-task2"></a>
 
 Knowledge of:
+
 + Difference between on-demand and provisioned resources
 + How to compare scaling policies
 + Tradeoffs and use cases of infrastructure as code (IaC) options (for example, AWS CloudFormation, AWS CDK)
@@ -41,6 +45,7 @@ Knowledge of:
 + How to use SageMaker AI endpoint auto scaling policies to meet scalability requirements (for example, based on demand, time)
 
 Skills in:
+
 + Applying best practices to enable maintainable, scalable, and cost-effective ML solutions (for example, automatic scaling on SageMaker AI endpoints, dynamically adding Spot Instances, by using Amazon EC2 instances, by using Lambda behind the endpoints)
 + Automating the provisioning of compute resources, including communication between stacks (for example, by using CloudFormation, AWS CDK)
 + Building and maintaining containers (for example, Amazon ECR, Amazon EKS, Amazon ECS, by using bring your own container [BYOC] with SageMaker AI)
@@ -52,6 +57,7 @@ Skills in:
 <a name="machine-learning-engineer-associate-01-domain3-task3"></a>
 
 Knowledge of:
+
 + Capabilities and quotas for AWS CodePipeline, AWS CodeBuild, and AWS CodeDeploy
 + Automation and integration of data ingestion with orchestration services
 + Version control systems and basic usage (for example, Git)
@@ -60,6 +66,7 @@ Knowledge of:
 + How code repositories and pipelines work together
 
 Skills in:
+
 + Configuring and troubleshooting CodeBuild, CodeDeploy, and CodePipeline, including stages
 + Applying continuous deployment flow structures to invoke pipelines (for example, Gitflow, GitHub Flow)
 + Using AWS services to automate orchestration (for example, to deploy ML models, automate model building)

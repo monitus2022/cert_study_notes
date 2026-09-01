@@ -2,6 +2,7 @@ site_name: Certification Study Notes
 docs_dir: 'docs'
 exclude_docs: |
   README.md
-
+hooks:
+  - hooks.py        # To add space lines between title and unordered list in the markdown files
 theme:
-  name: readthedocs
+  name: material
