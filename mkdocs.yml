@@ -6,3 +6,21 @@ hooks:
   - hooks.py        # To add space lines between title and unordered list in the markdown files
 theme:
   name: material
+  palette:
+  # Primary colors: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue grey, black, white.
+  # Accent colors: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange.
+      # Light Mode
+      - scheme: default
+        primary: pink
+        accent: red
+        toggle:
+          icon: material/brightness-7
+          name: Switch to dark mode
+
+      # Dark Mode
+      - scheme: slate
+        primary: pink
+        accent: red
+        toggle:
+          icon: material/brightness-4
+          name: Switch to light mode
