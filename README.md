@@ -5,3 +5,14 @@ This repo contains my study notes created / generated for preparing IT Professio
 ## Requirements
 
 You can read notes in the repository or build the documentation locally using [MkDocs](https://www.mkdocs.org/).
+
+```bash
+pip install mkdocs
+mkdocs serve
+```
+
+Build it:
+
+```bash
+mkdocs build
+```
