@@ -40,7 +40,7 @@
   <p><b>A:</b> It is a service to migrate relational databases, data warehouses, NoSQL databases, and other types of data stores.</p>
 </details>
 
-<details open>
+<details>
   <summary><b>Q: What does SageMaker Clarify help do?</b></summary>
   <p><b>A:</b></p>
   <ul>
