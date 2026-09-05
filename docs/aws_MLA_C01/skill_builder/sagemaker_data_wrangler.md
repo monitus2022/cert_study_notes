@@ -5,6 +5,6 @@
 <details>
 <summary>Full report</summary>
 
-![Data quality and insights report](./assets/data-wrangler-insights-report.png)
+![Data quality and insights report](assets/data-wrangler-insights-report.png)
 
 </details>
