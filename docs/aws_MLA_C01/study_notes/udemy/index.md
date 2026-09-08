@@ -2,7 +2,7 @@
 
 | Chapter | Exam Task | Content |
 |---------|-----------|---------|
-| [1.1 Data Ingestion and Storage](./1.1.md) | - Task 1.1: Ingest and store data | - Types, formats, and properties of data <br> - Data warehouses, lakes, and lakehouses <br>- ETL Pipelines and Orchestration <br> - AWS Storage and Streaming Services |
+| 1.1 Data Ingestion and Storage | - Task 1.1: Ingest and store data | - Types, formats, and properties of data <br> - Data warehouses, lakes, and lakehouses <br>- ETL Pipelines and Orchestration <br> - AWS Storage and Streaming Services |
 | [1.2 Data Transformation, Integrity, and Feature Engineering](./1.2.md) | - Task 1.2: Transform data and perform feature engineering<br> - Task 1.3: Ensure data integrity and prepare data for modeling | - Elastic MapReduce (EMR)<br> - Handling missing, unbalanced, and outlier data<br> - Common data transformations<br> - SageMaker data processing and analysis features<br> - AWS Glue |
 | [2.1 AWS Managed AI Services](./2.1.md) | - Task 2.1: Choosing a modeling approach | - Amazon Personalize<br> - Amazon Polly<br> - Amazon Rekognition<br> - Amazon Q<br> - Amazon Comprehend<br> - Amazon Forecast<br> - Amazon Lex<br> - Amazon Kendra<br> - Amazon Textract<br> - Amazon Transcribe<br> - Amazon Translate<br> - Amazon Fraud Detector |
 | [2.2 SageMaker Built-In Algorithms](./2.2.md) | - Task 2.1: Choosing a modeling approach | - SageMaker built-in algorithms |
