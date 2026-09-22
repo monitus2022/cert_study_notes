@@ -4,6 +4,11 @@ exclude_docs: |
   README.md
 hooks:
   - hooks.py        # To add space lines between title and unordered list in the markdown files
+copyright: >
+  All cloud service descriptions, product definitions, and documentation excerpts 
+  belong to their respective owners (&copy; Amazon Web Services, Inc., Microsoft 
+  Corporation, Google LLC). Used strictly for personal, non-commercial study and 
+  exam preparation.
 theme:
   name: material
   palette:
