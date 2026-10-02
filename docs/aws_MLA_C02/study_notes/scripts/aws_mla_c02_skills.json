@@ -1,0 +1,858 @@
+[
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "1",
+        "skill_name": "Extract data from data sources (for example, Amazon S3, Amazon EBS, Amazon EFS, Amazon RDS, Amazon DynamoDB, Amazon OpenSearch Service)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "2",
+        "skill_name": "Make storage decisions and configure storage services based on cost, performance, data structure, and data compliance."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "3",
+        "skill_name": "Troubleshoot and debug data ingestion and storage issues that involve capacity and scalability."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "4",
+        "skill_name": "Use AWS streaming data sources to ingest data (for example, by using Amazon Kinesis, Apache Flink, Apache Kafka)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "5",
+        "skill_name": "Ingest from and write by using appropriate data formats (for example, Apache Parquet, JSON, CSV, ORC) based on data access patterns."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "6",
+        "skill_name": "Merge data from multiple sources (for example, by using programming techniques, AWS Glue, Apache Spark)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "7",
+        "skill_name": "Configure scalable vector databases for AI applications (for example, OpenSearch Service, Amazon RDS with pgvector, Amazon S3) based on specifications."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "8",
+        "skill_name": "Ingest and store diverse data types (for example, text, images, audio) for AI and ML applications."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "1",
+        "task_name": "Collect and store data.",
+        "skill_id": "9",
+        "skill_name": "Ingest data into SageMaker Feature Store."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "1",
+        "skill_name": "Transform data by using AWS tools (for example, AWS Glue, AWS Glue DataBrew, Spark on Amazon EMR, SageMaker Data Wrangler)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "2",
+        "skill_name": "Create and manage features by using AWS tools (for example, SageMaker Feature Store)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "3",
+        "skill_name": "Transform streaming data (for example, by using AWS Lambda, Spark)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "4",
+        "skill_name": "Perform feature engineering (for example, scaling, standardization, feature splitting, binning, log transformation, normalization)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "5",
+        "skill_name": "Configure and use embedding models to transform text and image data into numerical representations."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "6",
+        "skill_name": "Apply advanced text pre-processing techniques (for example, tokenization, domain-specific augmentation)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "7",
+        "skill_name": "Prepare documents for Retrieval Augmented Generation (RAG) applications (for example, chunking strategies, metadata extraction)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "8",
+        "skill_name": "Mask, redact, and anonymize data."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "2",
+        "task_name": "Perform data transformation, feature engineering, and pre-processing.",
+        "skill_id": "9",
+        "skill_name": "Prepare data for FM fine-tuning, continuous pre-training, and model distillation."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "3",
+        "task_name": "Validate data quality and manage bias.",
+        "skill_id": "1",
+        "skill_name": "Validate data quality (for example, by using DataBrew, AWS Glue Data Quality)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "3",
+        "task_name": "Validate data quality and manage bias.",
+        "skill_id": "2",
+        "skill_name": "Label and annotate data."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "3",
+        "task_name": "Validate data quality and manage bias.",
+        "skill_id": "3",
+        "skill_name": "Identify and mitigate sources of bias in data by using AWS tools and techniques (for example, dataset splitting, shuffling, augmentation)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "3",
+        "task_name": "Validate data quality and manage bias.",
+        "skill_id": "4",
+        "skill_name": "Optimize multimodal data distributions by applying bias metrics across numeric, text, and image assets."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "3",
+        "task_name": "Validate data quality and manage bias.",
+        "skill_id": "5",
+        "skill_name": "Resolve class imbalance in numeric, text, and image datasets."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "3",
+        "task_name": "Validate data quality and manage bias.",
+        "skill_id": "6",
+        "skill_name": "Validate AI training data integrity (for example, prompt-response pair validation, content safety screening)."
+    },
+    {
+        "domain_id": "1",
+        "domain_name": "Data Preparation for ML and AI",
+        "task_id": "3",
+        "task_name": "Validate data quality and manage bias.",
+        "skill_id": "7",
+        "skill_name": "Clean data (for example, by detecting outliers, imputing missing data, deduplication)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "1",
+        "skill_name": "Evaluate and select appropriate FMs from Amazon Bedrock based on task requirements and performance criteria."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "2",
+        "skill_name": "Identify fine-tuning strategies for pre-trained FMs to meet business needs."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "3",
+        "skill_name": "Compare and select appropriate ML models, generative AI (GenAI) models, algorithms, and solution templates to meet business needs (for example, interpretability, domain-specific performance, latency)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "4",
+        "skill_name": "Evaluate tradeoffs between custom solutions, managed services, pre-trained models, and FMs to meet business needs."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "5",
+        "skill_name": "Select Retrieval Augmented Generation (RAG) architecture patterns based on use case requirements."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "6",
+        "skill_name": "Assess tradeoffs between ML model performance, training time, and cost."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "7",
+        "skill_name": "Assess tradeoffs between AI model performance, latency, and cost."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "1",
+        "task_name": "Choose appropriate modeling approaches for ML and AI solutions.",
+        "skill_id": "8",
+        "skill_name": "Apply AWS AI services to solve specific business problems (for example, Amazon Textract, Amazon Rekognition, Amazon Comprehend, Amazon Transcribe)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "1",
+        "skill_name": "Apply Amazon SageMaker AI built-in algorithms and common ML libraries."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "2",
+        "skill_name": "Configure SageMaker AI script mode with supported frameworks for simplicity and performance."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "3",
+        "skill_name": "Implement hyperparameter optimization (for example, SageMaker AI automatic model tuning [AMT])."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "4",
+        "skill_name": "Implement training time reduction techniques (for example, early stopping, distributed training)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "5",
+        "skill_name": "Prevent model overfitting, underfitting, and catastrophic forgetting."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "6",
+        "skill_name": "Combine multiple ML models to improve performance or reduce cost."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "7",
+        "skill_name": "Adjust fundamental hyperparameters (for example, epoch, steps, batch size)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "8",
+        "skill_name": "Apply customization techniques for AI solutions (for example, task-specific prompt engineering, fine-tuning)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "2",
+        "task_name": "Train, fine-tune, and customize models for ML and AI solutions.",
+        "skill_id": "9",
+        "skill_name": "Optimize retrieval components and embedding models."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "1",
+        "skill_name": "Perform reproducible experiments (for example, by using MLflow on SageMaker AI, Amazon Bedrock evaluations, Amazon Bedrock Prompt Management)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "2",
+        "skill_name": "Create model performance baselines and implement drift detection."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "3",
+        "skill_name": "Compare the performance of shadow variants to production variants."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "4",
+        "skill_name": "Explain model outputs."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "5",
+        "skill_name": "Debug model convergence issues."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "6",
+        "skill_name": "Apply comprehensive model evaluation techniques for traditional ML and GenAI models."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "7",
+        "skill_name": "Implement integrated human evaluation frameworks (for example, human-in-the-loop workflows, text generation quality assessment)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "8",
+        "skill_name": "Apply natural language processing (NLP) evaluation metrics (for example, bilingual evaluation understudy [BLEU], Recall-Oriented Understudy for Gisting Evaluation [ROUGE], BERTScore, semantic similarity)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "9",
+        "skill_name": "Perform AI evaluation (for example, model output assessment, content quality validation, bias detection, LLM-as-a-judge frameworks)."
+    },
+    {
+        "domain_id": "2",
+        "domain_name": "ML Model and Foundation Model (FM) Development",
+        "task_id": "3",
+        "task_name": "Analyze and evaluate the performance of ML and AI systems.",
+        "skill_id": "10",
+        "skill_name": "Configure RAG system monitoring, including retrieval accuracy assessment."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "1",
+        "skill_name": "Select appropriate compute environments and deployment targets."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "2",
+        "skill_name": "Select deployment orchestrators and multi-model or multi-container deployment strategies."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "3",
+        "skill_name": "Select model inference strategies (for example, real-time and batch processing)."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "4",
+        "skill_name": "Evaluate and select appropriate foundation model (FM) deployment options."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "5",
+        "skill_name": "Deploy models that were built outside of AWS into AWS environments (for example, Amazon SageMaker AI, Amazon Bedrock Custom Model Import)."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "6",
+        "skill_name": "Deploy and configure agents for specific tasks, integration with other services and tools, and agent communication protocols."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "7",
+        "skill_name": "Configure FM deployment, model hosting, and resource allocation."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "1",
+        "task_name": "Manage deployment infrastructure for ML and AI model types.",
+        "skill_id": "8",
+        "skill_name": "Apply Retrieval Augmented Generation (RAG) system configurations (for example, retrieval strategies, reranking)."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "1",
+        "skill_name": "Optimize resource provisioning between on-demand and provisioned resources for performance and cost efficiency."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "2",
+        "skill_name": "Automate compute resource provisioning with integrated communication between stacks and orchestration services."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "3",
+        "skill_name": "Build and maintain containers for ML and AI workloads."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "4",
+        "skill_name": "Configure SageMaker AI endpoints within VPC network environments."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "5",
+        "skill_name": "Deploy and host models programmatically (for example, by using the SageMaker AI SDK for Python, AWS CLI, Boto3)."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "6",
+        "skill_name": "Select specific metrics for auto scaling implementations."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "7",
+        "skill_name": "Create and manage Amazon Bedrock knowledge bases with vector database configurations, document indexing, and retrieval optimization."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "8",
+        "skill_name": "Implement retrieval pipelines to meet business needs."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "9",
+        "skill_name": "Implement agent state management systems."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "10",
+        "skill_name": "Implement AI-specific resource scaling for GPU workloads."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "2",
+        "task_name": "Provision and configure resources for ML and AI workloads based on existing architecture and requirements.",
+        "skill_id": "11",
+        "skill_name": "Deploy agentic workflow infrastructure."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "1",
+        "skill_name": "Implement automated deployment strategies and rollback actions."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "2",
+        "skill_name": "Configure and troubleshoot AWS CodeBuild, AWS CodeCommit, AWS CodeDeploy, AWS CodePipeline, and AWS CodeConnections."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "3",
+        "skill_name": "Configure training and inference jobs."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "4",
+        "skill_name": "Configure automated testing strategies within CI/CD pipelines for traditional ML and AI workloads."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "5",
+        "skill_name": "Build and integrate mechanisms to re-train models."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "6",
+        "skill_name": "Manage model versions for repeatability and audits (for example, SageMaker Model Registry, MLflow on SageMaker AI)."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "7",
+        "skill_name": "Manage prompts (for example, Amazon Bedrock Prompt Management)."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "8",
+        "skill_name": "Implement automated agent deployment pipelines and agent version management."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "9",
+        "skill_name": "Implement AI model testing frameworks, including prompt testing."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "10",
+        "skill_name": "Configure FM deployment automation with fine-tuned model versioning."
+    },
+    {
+        "domain_id": "3",
+        "domain_name": "Deployment and Orchestration of ML and AI Workflows",
+        "task_id": "3",
+        "task_name": "Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.",
+        "skill_id": "11",
+        "skill_name": "Configure AI-specific pipeline orchestration for RAG system updates and knowledge base refresh cycles."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "1",
+        "task_name": "Monitor ML and AI model inference and performance.",
+        "skill_id": "1",
+        "skill_name": "Monitor model performance in production by using Amazon CloudWatch generative AI observability, Amazon Bedrock Model Evaluation, and drift detection pipelines."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "1",
+        "task_name": "Monitor ML and AI model inference and performance.",
+        "skill_id": "2",
+        "skill_name": "Monitor workflows to detect anomalies or errors in data processing or model inference."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "1",
+        "task_name": "Monitor ML and AI model inference and performance.",
+        "skill_id": "3",
+        "skill_name": "Detect changes in data distribution that can affect model performance."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "1",
+        "task_name": "Monitor ML and AI model inference and performance.",
+        "skill_id": "4",
+        "skill_name": "Monitor model performance in production by using A/B testing."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "1",
+        "task_name": "Monitor ML and AI model inference and performance.",
+        "skill_id": "5",
+        "skill_name": "Monitor and automate the management of agent performance and coordination (for example, coordination failure detection, truncated streaming, tool failures)."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "1",
+        "task_name": "Monitor ML and AI model inference and performance.",
+        "skill_id": "6",
+        "skill_name": "Configure AI-specific performance monitoring for foundation models (FMs), such as Amazon Bedrock evaluations."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "1",
+        "skill_name": "Select inference instance families to optimize performance and cost."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "2",
+        "skill_name": "Configure and use tools to troubleshoot and analyze resources (for example, Amazon CloudWatch, Amazon Bedrock AgentCore Observability, AWS X-Ray)."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "3",
+        "skill_name": "Set up dashboards to monitor performance metrics."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "4",
+        "skill_name": "Optimize capacity for cost, performance, and reliability."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "5",
+        "skill_name": "Optimize costs and set cost quotas by using appropriate cost management tools."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "6",
+        "skill_name": "Optimize infrastructure costs by selecting purchasing options."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "7",
+        "skill_name": "Evaluate cost implications of using FMs for inference in production."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "8",
+        "skill_name": "Monitor agent resource consumption patterns."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "9",
+        "skill_name": "Manage FM inference costs with usage optimization."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "2",
+        "task_name": "Optimize and manage ML and AI infrastructure costs and performance.",
+        "skill_id": "10",
+        "skill_name": "Monitor AI-specific cost patterns (for example, token usage optimization, embedding computation costs, vector database storage optimization)."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "1",
+        "skill_name": "Secure continuous integration and continuous delivery (CI/CD) pipelines by checking for code and image vulnerabilities (for example, by using Amazon CodeGuru, Amazon Inspector)."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "2",
+        "skill_name": "Configure least privilege access to ML and AI artifacts."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "3",
+        "skill_name": "Configure IAM policies and roles for users and applications in ML and AI systems."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "4",
+        "skill_name": "Configure comprehensive monitoring, auditing, compliance, and logging for ML and AI systems (for example, AWS CloudTrail, AWS Config)."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "5",
+        "skill_name": "Troubleshoot and debug security issues in ML and AI systems."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "6",
+        "skill_name": "Create VPCs, subnets, and security groups to securely isolate ML and AI systems."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "7",
+        "skill_name": "Identify and mitigate security risks and vulnerabilities in ML and AI systems."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "8",
+        "skill_name": "Select the appropriate credential type to access FMs (for example, Amazon Bedrock API keys, IAM credentials)."
+    },
+    {
+        "domain_id": "4",
+        "domain_name": "Operating, Monitoring, and Securing ML and AI Solutions",
+        "task_id": "3",
+        "task_name": "Secure ML and AI workloads and model endpoints.",
+        "skill_id": "9",
+        "skill_name": "Implement safeguards and sensitive data protection to meet application requirements and responsible AI policies (for example, by using Amazon Bedrock Guardrails)."
+    }
+]
