@@ -41,7 +41,11 @@ markdown_extensions:
   - tables
   - attr_list
   - pymdownx.arithmatex:
-        generic: true  
+        generic: true 
+
+plugins: 
+  - mkdocs-jupyter
+  - search
 
 extra_javascript:
   - javascripts/mathjax.js

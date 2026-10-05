@@ -4,3 +4,4 @@ venv/
 .DS_Store
 site/
 __pycache__/
+.cache/
