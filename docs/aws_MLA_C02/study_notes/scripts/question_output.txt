@@ -1,0 +1,31 @@
+### Question: AWS Budgets for Cost Monitoring and Alerting in Machine Learning Workloads
+
+**Category:** MLA – Operating, Monitoring, and Securing ML and AI Solutions 
+**Review Bucket:** [ ] Bucket A (Term Mapping) | [ ] Bucket B (Missed Constraint) | [ ] Bucket C (Knowledge Gap)
+
+A media company runs machine learning workloads in Amazon SageMaker AI for several internal business units. Each unit receives a predetermined AWS spending allowance every month, and resources are labeled with department-specific tags so that costs can be tracked separately. 
+
+Finance wants an automated way to notify each business unit **before** its **projected** monthly charges surpass its assigned spending limit, with **minimal administrative effort**.
+
+What solution should be implemented?
+
+- **A)** Create an AWS Cost Anomaly Detection monitor for each business unit. Scope each monitor by the cost allocation tags associated with the corresponding unit. Configure alert subscriptions to notify the unit when unusual spending patterns are detected during the month.
+- **B)** Configure a fixed budget in AWS Budgets for each business unit. Filter the budget by user-defined cost allocation tags assigned to each unit. Send an alert when forecasted monthly charges are expected to exceed the configured spending threshold.
+- **C)** Configure an auto-adjusting budget in AWS Budgets for each business unit. Filter the budget by AWS-generated cost allocation tags associated with each unit. Configure daily budget reports to provide updates on departmental spending.
+- **D)** Create a fixed budget in AWS Budgets for each business unit and filter the budget by user-defined cost allocation tags. Configure the budget to publish a notification to an Amazon SNS topic when actual monthly spending reaches the assigned limit. Subscribe an AWS Lambda function to the SNS topic to process the event and notify the corresponding business unit.
+
+??? note "Click to reveal Answer & Explanation"
+    **Correct Answer:** **B**
+
+    #### Correct Option Analysis
+    *   **B is Correct:** AWS Budgets allows you to set custom budget thresholds (fixed budgets) and filter them by **user-defined cost allocation tags** (e.g., `Department: Marketing`). It natively supports sending alerts based on **forecasted** costs. This satisfies the requirement to notify business units *before* their projected monthly charges surpass the limit (proactive alerting) with minimal administrative effort because no custom code or complex infrastructure is required.
+
+    #### Distractor Analysis
+    *   **A is Incorrect:** AWS Cost Anomaly Detection is designed to identify unexpected spending spikes based on historical usage patterns. It does not track spending against a static monthly budget cap or provide alerts specifically based on forecasted monthly totals exceeding a predefined allowance for a business unit.
+    *   **C is Incorrect:** Auto-adjusting budgets in AWS Budgets dynamically change thresholds based on historical spending patterns, which is not suitable for a fixed "predetermined spending allowance." Also, the tags used to distinguish business units are created by the users (user-defined), not by AWS (AWS-generated).
+    *   **D is Incorrect:** This solution triggers based on "actual" monthly spending rather than "forecasted" spending. Alerting on actuals usually occurs *after* the limit has been hit, failing the "before" requirement. Additionally, it introduces unnecessary operational overhead and complexity by building a custom Lambda and SNS event-processing pipeline when AWS Budgets already natively supports email and SNS notifications natively.
+
+    > **Key Takeaway:** To alert **before** spending exceeds a limit based on **projected costs**, use **AWS Budgets** with **Forecasted** cost alerts. Look for keywords like "before it is exceeded" or "projected" to identify the need for Forecasted alerts rather than Actual alerts. Prefer native service integrations (like AWS Budgets -> SNS) over custom code (Lambda) to meet "minimal administrative effort" requirements.
+
+??? warning "self-notes"
+    <space for user to write self notes>
