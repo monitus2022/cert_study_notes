@@ -28,7 +28,11 @@ def main():
     ### Question: <topic covered>
 
     **Category:** <domain 1-4 of exam as provided> 
-    **Review Bucket:** [ ] Bucket A (Term Mapping) | [ ] Bucket B (Missed Constraint) | [ ] Bucket C (Knowledge Gap) <Note: do not fill in the checkbox>
+    
+    **Review Bucket:** 
+    - [ ] Bucket A (Term Mapping)
+    - [ ] Bucket B (Missed Constraint)
+    - [ ] Bucket C (Knowledge Gap) <Note: do not fill in the checkbox>
 
     A media company runs machine learning workloads in Amazon SageMaker AI for several internal business units. Each unit receives a predetermined AWS spending allowance every month, and resources are labeled with department-specific tags so that costs can be tracked separately. 
 

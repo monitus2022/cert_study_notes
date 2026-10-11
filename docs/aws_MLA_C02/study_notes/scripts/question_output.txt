@@ -1,29 +1,35 @@
-### Question: Storage for Distributed Deep Learning Training
+### Question: Redacting PII from Identity Documents for ML
 
-**Category:** MLA – Data Preparation for ML and AI  
-**Review Bucket:** [ ] Bucket A (Term Mapping) | [ ] Bucket B (Missed Constraint) | [ ] Bucket C (Knowledge Gap)
+**Category:** MLA – Data Preparation for ML and AI
 
-A research institute is developing a deep-learning model to analyze satellite images for weather forecasting. The dataset consists of millions of high-resolution images stored in a format that requires file-level access. The model training process involves multiple GPU-powered Amazon EC2 instances that require high throughput and low latency access to the dataset for efficient distributed training.
+**Review Bucket:** 
+- [X] Bucket A (Term Mapping)
+- [X] Bucket B (Missed Constraint)
+- [ ] Bucket C (Knowledge Gap)
 
-Which AWS storage solution is the MOST suitable to support the deep-learning model training process?
+A global travel services company processes identity documents submitted as part of customer verification workflows. The company uses Amazon Textract to extract text from scanned passport pages. The extracted data is stored in Amazon S3 before being incorporated into a dataset for an ML workload.
 
-* **A)** Amazon FSx for Lustre
-* **B)** Amazon FSx for Windows File Server
-* **C)** Amazon Elastic File System (Amazon EFS)
-* **D)** Amazon Simple Storage Service (Amazon S3)
+An ML engineer must redact passport numbers from the extracted text before the dataset is used for model training. The company wants to avoid custom processing logic and reduce ongoing maintenance.
+
+Which implementation would satisfy the requirements with minimal operational management?
+
+* **A)** Submit the extracted text to an asynchronous Amazon Comprehend PII analysis job. Configure the output settings to replace detected passport numbers with masking characters.
+* **B)** Call the Amazon Comprehend DetectPiiEntities API to locate passport numbers in the extracted text. Invoke AWS Lambda to mask the character ranges returned by the API.
+* **C)** Use Textract with the AnalyzeDocument API and the FORMS feature to identify passport number fields. Use the detected key-value pairs to locate and mask passport numbers.
+* **D)** Configure an Amazon Macie sensitive data discovery job for the S3 objects. Use the resulting findings to identify files containing passport numbers and initiate redaction processing.
 
 ??? note "Click to reveal Answer & Explanation"
     **Correct Answer:** **A**
 
     #### Correct Option Analysis
-    * **A is Correct:** Amazon FSx for Lustre is a fully managed, high-performance file system designed for workloads such as machine learning, high-performance computing (HPC), and media processing. It provides POSIX-compliant file-level access, sub-millisecond latencies, and high throughput, making it ideal for distributed training across multiple GPU instances. It can also be linked to Amazon S3 to ingest data seamlessly.
+    * **A is Correct:** Amazon Comprehend supports native PII detection and redaction. An asynchronous analysis job for PII can be configured to directly output a modified version of the text with detected entities (like passport numbers) replaced with masking characters. This requires no custom processing logic (no Lambda functions to write or maintain) and is fully managed by AWS. The asynchronous nature is also ideal for processing large batches of documents in S3.
 
     #### Distractor Analysis
-    * **B is Incorrect:** Amazon FSx for Windows File Server is built on Windows Server and is intended for Windows-based workloads, not for Linux-based GPU training environments. It does not offer the same level of performance for HPC or ML workloads as FSx for Lustre.
-    * **C is Incorrect:** Amazon EFS is a scalable, general-purpose file system, but it is not optimized for the extreme throughput and low-latency requirements of distributed deep learning training. It may become a bottleneck when many GPU instances access large datasets concurrently.
-    * **D is Incorrect:** Amazon S3 is object storage, not a file system. While it can be used with tools like S3 mountpoints, it does not natively provide the file-level access, high throughput, and low latency needed for efficient distributed training without additional complexity and potential performance trade-offs.
+    * **B is Incorrect:** While `DetectPiiEntities` correctly identifies the PII and its character offsets, it only returns the location of the PII. This option requires building and maintaining a custom AWS Lambda function to perform the actual masking, violating the "avoid custom processing logic" requirement.
+    * **C is Incorrect:** Using Textract's `FORMS` feature to detect key-value pairs is a valid text extraction technique, but it doesn't natively redact data. You would still need custom logic to parse the response and overwrite the data. Moreover, Amazon Comprehend PII detection is specifically designed to find entities like passport numbers regardless of their location in the document, making it a better fit than relying on particular field names.
+    * **D is Incorrect:** Amazon Macie is used for **discovery** and **alerting** on sensitive data in S3 buckets (e.g., security, compliance). It is not an appropriate service for modifying or processing data. This option would require a complex integration (triggering a Lambda from Macie findings to perform redaction), which adds operational overhead rather than minimizing it.
 
-    > **Key Takeaway:** For high-performance, file-level access with low latency and high throughput in distributed ML training, choose **Amazon FSx for Lustre**. It is purpose-built for HPC and ML workloads, unlike general-purpose file systems or object storage.
+    > **Key Takeaway:** For native PII identification **and** masking without writing code, use **Amazon Comprehend's native redaction capabilities** (available via the console or API) rather than building a pipeline. Macie is for visibility/compliance, not data transformation.
 
 ??? warning "self-notes"
     <space for user to write self notes>

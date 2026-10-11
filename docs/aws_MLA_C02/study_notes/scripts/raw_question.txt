@@ -1,9 +1,13 @@
 Category: MLA – Data Preparation for ML and AI
-A research institute is developing a deep-learning model to analyze satellite images for weather forecasting. The dataset consists of millions of high-resolution images stored in a format that requires file-level access. The model training process involves multiple GPU-powered Amazon EC2 instances that require high throughput and low latency access to the dataset for efficient distributed training.
+A global travel services company processes identity documents submitted as part of customer verification workflows. The company uses Amazon Textract to extract text from scanned passport pages. The extracted data is stored in Amazon S3 before being incorporated into a dataset for an ML workload.
 
-Which AWS storage solution is the MOST suitable to support the deep-learning model training process?
+An ML engineer must redact passport numbers from the extracted text before the dataset is used for model training. The company wants to avoid custom processing logic and reduce ongoing maintenance.
 
-Amazon FSx for Lustre
-Amazon FSx for Windows File Server
-Amazon Elastic File System (Amazon EFS)
-Amazon Simple Storage Service (Amazon S3)
+Which implementation would satisfy the requirements with minimal operational management?
+
+Submit the extracted text to an asynchronous Amazon Comprehend PII analysis job. Configure the output settings to replace detected passport numbers with masking characters.
+
+Call the Amazon Comprehend DetectPiiEntities API to locate passport numbers in the extracted text. Invoke AWS Lambda to mask the character ranges returned by the API.
+
+Use Textract with the AnalyzeDocument API and the FORMS feature to identify passport number fields. Use the detected key-value pairs to locate and mask passport numbers.
+Configure an Amazon Macie sensitive data discovery job for the S3 objects. Use the resulting findings to identify files containing passport numbers and initiate redaction processing.
