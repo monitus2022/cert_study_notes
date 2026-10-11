@@ -1,35 +1,33 @@
-### Question: Redacting PII from Identity Documents for ML
+### Question: Migrating ML Data from On-Premises MySQL to Amazon Aurora
 
 **Category:** MLA – Data Preparation for ML and AI
 
 **Review Bucket:** 
-- [X] Bucket A (Term Mapping)
-- [X] Bucket B (Missed Constraint)
+- [ ] Bucket A (Term Mapping)
+- [ ] Bucket B (Missed Constraint)
 - [ ] Bucket C (Knowledge Gap)
 
-A global travel services company processes identity documents submitted as part of customer verification workflows. The company uses Amazon Textract to extract text from scanned passport pages. The extracted data is stored in Amazon S3 before being incorporated into a dataset for an ML workload.
+A startup uses an on-premises MySQL database to store its machine learning (ML) model training data. The decision has been made to migrate the ML data to Amazon Aurora for better scalability and performance.
 
-An ML engineer must redact passport numbers from the extracted text before the dataset is used for model training. The company wants to avoid custom processing logic and reduce ongoing maintenance.
+What is the most suitable approach for migrating ML data from MySQL to Aurora?
 
-Which implementation would satisfy the requirements with minimal operational management?
-
-* **A)** Submit the extracted text to an asynchronous Amazon Comprehend PII analysis job. Configure the output settings to replace detected passport numbers with masking characters.
-* **B)** Call the Amazon Comprehend DetectPiiEntities API to locate passport numbers in the extracted text. Invoke AWS Lambda to mask the character ranges returned by the API.
-* **C)** Use Textract with the AnalyzeDocument API and the FORMS feature to identify passport number fields. Use the detected key-value pairs to locate and mask passport numbers.
-* **D)** Configure an Amazon Macie sensitive data discovery job for the S3 objects. Use the resulting findings to identify files containing passport numbers and initiate redaction processing.
+* **A)** Create a custom Python script that extracts the ML data from MySQL, compresses it, and uploads it directly to Aurora via the AWS SDK.
+* **B)** Set up a real-time data replication pipeline between MySQL and Aurora using AWS DMS.
+* **C)** Use AWS Data Transfer Terminal by reserving time at an AWS facility and physically connecting equipment to transfer the ML data into AWS, then load it into Aurora.
+* **D)** Use AWS DMS to perform a homogeneous migration from MySQL to Aurora.
 
 ??? note "Click to reveal Answer & Explanation"
-    **Correct Answer:** **A**
+    **Correct Answer:** **D**
 
     #### Correct Option Analysis
-    * **A is Correct:** Amazon Comprehend supports native PII detection and redaction. An asynchronous analysis job for PII can be configured to directly output a modified version of the text with detected entities (like passport numbers) replaced with masking characters. This requires no custom processing logic (no Lambda functions to write or maintain) and is fully managed by AWS. The asynchronous nature is also ideal for processing large batches of documents in S3.
+    * **D is Correct:** AWS Database Migration Service (AWS DMS) is the most suitable service for migrating data from an on-premises MySQL database to Amazon Aurora. Since both the source (MySQL) and target (Aurora MySQL) are compatible database engines, this is considered a **homogeneous migration**. AWS DMS handles the extraction, transformation (if needed), and loading of data securely and efficiently, with minimal downtime if configured correctly.
 
     #### Distractor Analysis
-    * **B is Incorrect:** While `DetectPiiEntities` correctly identifies the PII and its character offsets, it only returns the location of the PII. This option requires building and maintaining a custom AWS Lambda function to perform the actual masking, violating the "avoid custom processing logic" requirement.
-    * **C is Incorrect:** Using Textract's `FORMS` feature to detect key-value pairs is a valid text extraction technique, but it doesn't natively redact data. You would still need custom logic to parse the response and overwrite the data. Moreover, Amazon Comprehend PII detection is specifically designed to find entities like passport numbers regardless of their location in the document, making it a better fit than relying on particular field names.
-    * **D is Incorrect:** Amazon Macie is used for **discovery** and **alerting** on sensitive data in S3 buckets (e.g., security, compliance). It is not an appropriate service for modifying or processing data. This option would require a complex integration (triggering a Lambda from Macie findings to perform redaction), which adds operational overhead rather than minimizing it.
+    * **A is Incorrect:** While a custom script could technically be written to export data and import it into Aurora via the AWS SDK, this approach is time-consuming, error-prone, and not scalable for large ML datasets. It fails to leverage AWS-native tools designed for this exact purpose and introduces unnecessary operational overhead and maintenance burden.
+    * **B is Incorrect:** AWS DMS supports change data capture (CDC) for ongoing replication, but a "real-time replication pipeline" is typically a long-term strategy for syncing databases (e.g., for hybrid architectures or continuous migration). For a one-time migration scenario, a full load task using AWS DMS is more aligned with the goal of "migrating" without implying indefinite bi-directional sync or complex pipeline management.
+    * **C is Incorrect:** AWS Data Transfer Terminal is designed for high-volume, physical data transfer (e.g., petabytes of data) where network transfer is impractical or too slow. For a startup migrating a database (even a large ML training dataset), using a physical shipping service introduces significant delays, high costs, and complex logistics compared to network-based migration via AWS DMS, which is much faster and more operationally efficient.
 
-    > **Key Takeaway:** For native PII identification **and** masking without writing code, use **Amazon Comprehend's native redaction capabilities** (available via the console or API) rather than building a pipeline. Macie is for visibility/compliance, not data transformation.
+    > **Key Takeaway:** For homogeneous database migrations (same engine family, e.g., MySQL to Aurora), **AWS DMS** is the default choice. It is a managed service built to handle the extraction and loading of data securely and efficiently. Avoid custom scripts for large datasets because they are harder to maintain and scale. Reserve physical transfer services for massive datasets that cannot be moved over the network in a reasonable timeframe.
 
 ??? warning "self-notes"
     <space for user to write self notes>

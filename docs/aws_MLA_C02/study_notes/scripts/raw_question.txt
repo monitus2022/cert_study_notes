@@ -1,13 +1,9 @@
 Category: MLA – Data Preparation for ML and AI
-A global travel services company processes identity documents submitted as part of customer verification workflows. The company uses Amazon Textract to extract text from scanned passport pages. The extracted data is stored in Amazon S3 before being incorporated into a dataset for an ML workload.
+A startup uses an on-premises MySQL database to store its machine learning (ML) model training data. The decision has been made to migrate the ML data to Amazon Aurora for better scalability and performance.
 
-An ML engineer must redact passport numbers from the extracted text before the dataset is used for model training. The company wants to avoid custom processing logic and reduce ongoing maintenance.
+What is the most suitable approach for migrating ML data from MySQL to Aurora?
 
-Which implementation would satisfy the requirements with minimal operational management?
-
-Submit the extracted text to an asynchronous Amazon Comprehend PII analysis job. Configure the output settings to replace detected passport numbers with masking characters.
-
-Call the Amazon Comprehend DetectPiiEntities API to locate passport numbers in the extracted text. Invoke AWS Lambda to mask the character ranges returned by the API.
-
-Use Textract with the AnalyzeDocument API and the FORMS feature to identify passport number fields. Use the detected key-value pairs to locate and mask passport numbers.
-Configure an Amazon Macie sensitive data discovery job for the S3 objects. Use the resulting findings to identify files containing passport numbers and initiate redaction processing.
+Create a custom Python script that extracts the ML data from MySQL, compresses it, and uploads it directly to Aurora via the AWS SDK.
+Set up a real-time data replication pipeline between MySQL and Aurora using AWS DMS.
+Use AWS Data Transfer Terminal by reserving time at an AWS facility and physically connecting equipment to transfer the ML data into AWS, then load it into Aurora.
+Use AWS DMS to perform a homogeneous migration from MySQL to Aurora.
