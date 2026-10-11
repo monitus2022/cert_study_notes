@@ -11,3 +11,10 @@ Welcome to my personal AWS certification study repository and revision hub.
 | [AIF_C01](https://docs.aws.amazon.com/aws-certification/latest/ai-practitioner-01/ai-practitioner-01.html) | AI Foundation | ✅ | 
 | [CLF_C02](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html) | Cloud Practitioner | ✅ |
 | [MLA_C02](https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.html) | Machine Learning Engineer | ❌ |
+
+---
+
+## Useful links
+- [AWS Skill Builder](https://skillbuilder.aws/)
+- [Tutorial Dojo](https://tutorialsdojo.com/aws-cheat-sheets/)
+- [r/AWSCertifications](https://www.reddit.com/r/AWSCertifications/)

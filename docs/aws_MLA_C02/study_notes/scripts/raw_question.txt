@@ -1,9 +1,9 @@
 Category: MLA – Data Preparation for ML and AI
-A startup uses an on-premises MySQL database to store its machine learning (ML) model training data. The decision has been made to migrate the ML data to Amazon Aurora for better scalability and performance.
+A company needs to migrate 100 terabytes of data from an on-premises data center to Amazon S3. The data contains extensive logs, images, and unstructured data that will be used for training machine-learning models in Amazon SageMaker AI. The on-premises data center has limited internet connectivity, making online data transfer impractical.
 
-What is the most suitable approach for migrating ML data from MySQL to Aurora?
+Which AWS service should be used to transfer the data?
 
-Create a custom Python script that extracts the ML data from MySQL, compresses it, and uploads it directly to Aurora via the AWS SDK.
-Set up a real-time data replication pipeline between MySQL and Aurora using AWS DMS.
-Use AWS Data Transfer Terminal by reserving time at an AWS facility and physically connecting equipment to transfer the ML data into AWS, then load it into Aurora.
-Use AWS DMS to perform a homogeneous migration from MySQL to Aurora.
+AWS Data Transfer Terminal
+S3 Transfer Acceleration
+AWS DataSync
+AWS Storage Gateway
