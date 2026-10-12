@@ -1,35 +1,33 @@
-### Question: Selecting an Inference Instance Type with Minimal Benchmarking
+### Question: Orchestrating CI/CD for ML Workloads
 
-**Category:** MLA – Operating, Monitoring, and Securing ML and AI Solutions 
+**Category:** MLA – Deployment and Orchestration of ML and AI Workflows
 
 **Review Bucket:** 
 - [ ] Bucket A (Term Mapping)
 - [ ] Bucket B (Missed Constraint)
 - [ ] Bucket C (Knowledge Gap)
 
-A company has trained a new recommendation model and plans to deploy it to an existing application that experiences predictable traffic spikes during peak viewing hours. The model must run on a persistent Amazon SageMaker endpoint with low response latency, and the ML engineering team needs to determine the most appropriate instance type by testing the model against a workload pattern that reflects production traffic while minimizing manual benchmarking effort.
+A manufacturing company wants to develop a machine learning (ML) model for predicting equipment failures and optimizing maintenance schedules. The company has a team of data scientists who have developed custom Python scripts for data preprocessing, feature engineering, and model training. The company wants to leverage AWS services to build, train, and deploy its ML models in a scalable and automated manner.
 
-Which approach should the engineering team use to meet these requirements with minimal operational complexity?
+Which AWS service should the company use to orchestrate continuous integration and continuous deployment (CI/CD) pipeline?
 
-* **A)** Select an instance type by analyzing CPU, memory, and GPU utilization from a SageMaker Profiler report.
-* **B)** Deploy the model to a SageMaker AI real-time endpoint, configure target tracking scaling based on `SageMakerVariantInvocationsPerInstance`, and load test the endpoint to determine its latency characteristics.
-* **C)** Configure a SageMaker AI shadow test to evaluate a candidate instance type with replicated production requests and compare its latency against the current endpoint.
-* **D)** Run a SageMaker Inference Recommender endpoint recommendation job with a custom traffic pattern and production latency requirements.
+* **A)** AWS CodePipeline
+* **B)** Amazon CodeGuru Reviewer
+* **C)** AWS CodeDeploy
+* **D)** AWS CodeBuild
 
 ??? note "Click to reveal Answer & Explanation"
-    **Correct Answer:** **D**
+    **Correct Answer:** **A**
 
     #### Correct Option Analysis
-    * **D is Correct:** SageMaker Inference Recommender can run an endpoint recommendation job using a custom traffic pattern and specified production latency requirements. It automates instance type benchmarking and selection without requiring the team to build manual load tests or manage additional infrastructure.
+    * **A is Correct:** AWS CodePipeline is a fully managed continuous integration and continuous delivery (CI/CD) service. It is designed to automate the build, test, and deploy phases of your release process. This makes it the correct "orchestration" tool, as it can string together other services (like CodeBuild and CodeDeploy) into a single automated workflow for the ML models.
 
     #### Distractor Analysis
-    * **A is Incorrect:** A SageMaker Profiler report shows resource utilization from an existing endpoint or training job. It does not test a candidate instance type against a production-like traffic pattern, and it does not automatically recommend an instance type.
-    * **B is Incorrect:** Deploying to a real-time endpoint and configuring target tracking scaling measures scaling behavior, but it requires manually choosing an instance type and building a load test. This approach introduces more manual benchmarking effort than required.
-    * **C is Incorrect:** SageMaker shadow tests replicate production traffic to compare a new variant against a current endpoint. This requires an existing production endpoint, adds operational setup, and focuses on validating a model variant rather than selecting an instance type from a custom traffic pattern with minimal effort.
+    * **B is Incorrect:** Amazon CodeGuru Reviewer is an automated code review service that uses machine learning to identify critical issues, security vulnerabilities, and hard-to-find bugs in your code. It is not used to *orchestrate* pipelines but rather to analyze code quality *within* a build stage.
+    * **C is Incorrect:** AWS CodeDeploy is a deployment service that automates code deployments to any instance (EC2, Lambda, on-premises). While it is often triggered *by* a pipeline, it is just one component of the CI/CD process, not the overall orchestration engine that coordinates the different stages.
+    * **D is Incorrect:** AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages. Like CodeDeploy, it is a critical part of a pipeline but serves as a specific build stage rather than the orchestrator that ties stages (build -> deploy) together.
 
-    > **Key Takeaway:** Use SageMaker Inference Recommender to automate instance type selection and load testing based on custom traffic patterns and latency requirements.
+    > **Key Takeaway:** Understand the distinct roles of AWS Developer/Tooling services. **CodePipeline** is the orchestrator that integrates services like **CodeBuild** (Build) and **CodeDeploy** (Deploy). If the question asks for a service to "orchestrate" or "automate steps," CodePipeline is usually the right choice.
 
 ??? warning "self-notes"
     <space for user to write self notes>
-
----

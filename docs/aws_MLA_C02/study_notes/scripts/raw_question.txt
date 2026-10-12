@@ -1,10 +1,9 @@
-19. Question
-Category: MLA – Operating, Monitoring, and Securing ML and AI Solutions
-A company has trained a new recommendation model and plans to deploy it to an existing application that experiences predictable traffic spikes during peak viewing hours. The model must run on a persistent Amazon SageMaker endpoint with low response latency, and the ML engineering team needs to determine the most appropriate instance type by testing the model against a workload pattern that reflects production traffic while minimizing manual benchmarking effort.
+Category: MLA – Deployment and Orchestration of ML and AI Workflows
+A manufacturing company wants to develop a machine learning (ML) model for predicting equipment failures and optimizing maintenance schedules. The company has a team of data scientists who have developed custom Python scripts for data preprocessing, feature engineering, and model training. The company wants to leverage AWS services to build, train, and deploy its ML models in a scalable and automated manner.
 
-Which approach should the engineering team use to meet these requirements with minimal operational complexity?
+Which AWS service should the company use to orchestrate continuous integration and continuous deployment (CI/CD) pipeline?
 
-Select an instance type by analyzing CPU, memory, and GPU utilization from a SageMaker Profiler report.
-Deploy the model to a SageMaker AI real-time endpoint, configure target tracking scaling based on SageMakerVariantInvocationsPerInstance, and load test the endpoint to determine its latency characteristics.
-Configure a SageMaker AI shadow test to evaluate a candidate instance type with replicated production requests and compare its latency against the current endpoint.
-Run a SageMaker Inference Recommender endpoint recommendation job with a custom traffic pattern and production latency requirements.
+AWS CodePipeline
+Amazon CodeGuru Reviewer
+AWS CodeDeploy
+AWS CodeBuild
