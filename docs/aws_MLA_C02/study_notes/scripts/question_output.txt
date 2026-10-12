@@ -1,35 +1,33 @@
-### Question: Amazon Bedrock Benefits for Generative AI Model Development
+### Question: Selecting an Inference Instance Type with Minimal Benchmarking
 
-**Category:** MLA – ML Model and Foundation Model (FM) Development
+**Category:** MLA – Operating, Monitoring, and Securing ML and AI Solutions 
 
 **Review Bucket:** 
 - [ ] Bucket A (Term Mapping)
 - [ ] Bucket B (Missed Constraint)
 - [ ] Bucket C (Knowledge Gap)
 
-A large retail company is exploring generative AI to enhance its customer service chatbot. The company aims to fine-tune models from third-party services to enhance the chatbot’s comprehension of business-specific customer inquiries.
+A company has trained a new recommendation model and plans to deploy it to an existing application that experiences predictable traffic spikes during peak viewing hours. The model must run on a persistent Amazon SageMaker endpoint with low response latency, and the ML engineering team needs to determine the most appropriate instance type by testing the model against a workload pattern that reflects production traffic while minimizing manual benchmarking effort.
 
-Which benefits of Amazon Bedrock will help the retail company meet its requirements? (Select TWO.)
+Which approach should the engineering team use to meet these requirements with minimal operational complexity?
 
-* **A)** Offers distinct APIs for accessing different foundation models (FMs).
-* **B)** Amazon Bedrock enables private customization of foundation models (FMs).
-* **C)** Ensures that prompts and responses remain completely private and secure.
-* **D)** Offers a wide range of pre-trained foundation models (FMs) from multiple providers.
-* **E)** Amazon Bedrock requires customers to handle infrastructure provisioning.
+* **A)** Select an instance type by analyzing CPU, memory, and GPU utilization from a SageMaker Profiler report.
+* **B)** Deploy the model to a SageMaker AI real-time endpoint, configure target tracking scaling based on `SageMakerVariantInvocationsPerInstance`, and load test the endpoint to determine its latency characteristics.
+* **C)** Configure a SageMaker AI shadow test to evaluate a candidate instance type with replicated production requests and compare its latency against the current endpoint.
+* **D)** Run a SageMaker Inference Recommender endpoint recommendation job with a custom traffic pattern and production latency requirements.
 
 ??? note "Click to reveal Answer & Explanation"
-    **Correct Answer:** **B and D**
+    **Correct Answer:** **D**
 
     #### Correct Option Analysis
-    * **B is Correct:** Amazon Bedrock enables private customization of foundation models, allowing the retail company to fine-tune third-party models using its own business-specific data. This directly supports improving the chatbot’s comprehension of customer inquiries.
-    * **D is Correct:** Amazon Bedrock provides access to a wide range of pre-trained foundation models from multiple providers. This helps the company evaluate and use third-party generative AI models for its chatbot.
+    * **D is Correct:** SageMaker Inference Recommender can run an endpoint recommendation job using a custom traffic pattern and specified production latency requirements. It automates instance type benchmarking and selection without requiring the team to build manual load tests or manage additional infrastructure.
 
     #### Distractor Analysis
-    * **A is Incorrect:** Amazon Bedrock provides a unified, serverless experience for accessing multiple foundation models. It does not require learning distinct APIs for each model provider.
-    * **C is Incorrect:** While Amazon Bedrock offers strong privacy and security controls, the statement that it ensures prompts and responses remain completely private and secure is overly absolute. More importantly, the primary requirements here are multi-provider access and private fine-tuning, not security alone.
-    * **E is Incorrect:** Amazon Bedrock is a managed service and does **not** require customers to provision or manage underlying infrastructure.
+    * **A is Incorrect:** A SageMaker Profiler report shows resource utilization from an existing endpoint or training job. It does not test a candidate instance type against a production-like traffic pattern, and it does not automatically recommend an instance type.
+    * **B is Incorrect:** Deploying to a real-time endpoint and configuring target tracking scaling measures scaling behavior, but it requires manually choosing an instance type and building a load test. This approach introduces more manual benchmarking effort than required.
+    * **C is Incorrect:** SageMaker shadow tests replicate production traffic to compare a new variant against a current endpoint. This requires an existing production endpoint, adds operational setup, and focuses on validating a model variant rather than selecting an instance type from a custom traffic pattern with minimal effort.
 
-    > **Key Takeaway:** Amazon Bedrock helps teams adopt generative AI by providing **access to multiple third-party FMs** and by supporting **private customization/fine-tuning** of those models using business-specific data.
+    > **Key Takeaway:** Use SageMaker Inference Recommender to automate instance type selection and load testing based on custom traffic patterns and latency requirements.
 
 ??? warning "self-notes"
     <space for user to write self notes>

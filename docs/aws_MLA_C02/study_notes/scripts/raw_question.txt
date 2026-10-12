@@ -1,10 +1,10 @@
-Category: MLA – ML Model and Foundation Model (FM) Development
-A large retail company is exploring generative AI to enhance its customer service chatbot. The company aims to fine-tune models from third-party services to enhance the chatbot’s comprehension of business-specific customer inquiries.
+19. Question
+Category: MLA – Operating, Monitoring, and Securing ML and AI Solutions
+A company has trained a new recommendation model and plans to deploy it to an existing application that experiences predictable traffic spikes during peak viewing hours. The model must run on a persistent Amazon SageMaker endpoint with low response latency, and the ML engineering team needs to determine the most appropriate instance type by testing the model against a workload pattern that reflects production traffic while minimizing manual benchmarking effort.
 
-Which benefits of Amazon Bedrock will help the retail company meet its requirements? (Select TWO.)
+Which approach should the engineering team use to meet these requirements with minimal operational complexity?
 
-Offers distinct APIs for accessing different foundation models (FMs).
-Amazon Bedrock enables private customization of foundation models (FMs).
-Ensures that prompts and responses remain completely private and secure.
-Offers a wide range of pre-trained foundation models (FMs) from multiple providers.
-Amazon Bedrock requires customers to handle infrastructure provisioning.
+Select an instance type by analyzing CPU, memory, and GPU utilization from a SageMaker Profiler report.
+Deploy the model to a SageMaker AI real-time endpoint, configure target tracking scaling based on SageMakerVariantInvocationsPerInstance, and load test the endpoint to determine its latency characteristics.
+Configure a SageMaker AI shadow test to evaluate a candidate instance type with replicated production requests and compare its latency against the current endpoint.
+Run a SageMaker Inference Recommender endpoint recommendation job with a custom traffic pattern and production latency requirements.
