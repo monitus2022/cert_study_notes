@@ -1,9 +1,10 @@
-Category: MLA – Data Preparation for ML and AI
-A company needs to migrate 100 terabytes of data from an on-premises data center to Amazon S3. The data contains extensive logs, images, and unstructured data that will be used for training machine-learning models in Amazon SageMaker AI. The on-premises data center has limited internet connectivity, making online data transfer impractical.
+Category: MLA – ML Model and Foundation Model (FM) Development
+A large retail company is exploring generative AI to enhance its customer service chatbot. The company aims to fine-tune models from third-party services to enhance the chatbot’s comprehension of business-specific customer inquiries.
 
-Which AWS service should be used to transfer the data?
+Which benefits of Amazon Bedrock will help the retail company meet its requirements? (Select TWO.)
 
-AWS Data Transfer Terminal
-S3 Transfer Acceleration
-AWS DataSync
-AWS Storage Gateway
+Offers distinct APIs for accessing different foundation models (FMs).
+Amazon Bedrock enables private customization of foundation models (FMs).
+Ensures that prompts and responses remain completely private and secure.
+Offers a wide range of pre-trained foundation models (FMs) from multiple providers.
+Amazon Bedrock requires customers to handle infrastructure provisioning.
