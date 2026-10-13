@@ -1,9 +1,10 @@
 Category: MLA – Deployment and Orchestration of ML and AI Workflows
-A logistics company relies on a 2 GB custom machine learning model hosted in an on-premises environment to forecast delivery times. The company needs to migrate this model to AWS to lower operational overhead and use a fully managed service. The model experiences unpredictable traffic with peak loads during business hours and low activity at night and on weekends. The solution must scale automatically based on demand and be cost-effective during idle times.
+A company is developing a sentiment analysis model that processes text data from customer reviews. The company collects and stores these reviews in Amazon S3 buckets. The data preprocessing pipeline involves text cleaning, tokenization, and embedding generation using machine learning frameworks such as TensorFlow and Hugging Face’s Transformers. The processed data is then used for training and fine-tuning the model.
+Which set of actions will accomplish these tasks with the MINIMUM management effort? (Select THREE.)
 
-Which AWS service is the most suitable for these requirements?
-
-Use AWS Lambda to host the model, loading it from Amazon S3 on each invocation.
-Deploy the model as a serverless SageMaker AI endpoint with Provisioned Concurrency.
-Deploy the model as a serverless SageMaker AI endpoint without Provisioned Concurrency.
-Use Amazon SageMaker AI real-time endpoints with auto-scaling enabled.
+Create an AWS Lambda function to trigger a SageMaker Processing Job when new data is uploaded to the S3 bucket.
+Utilize AWS Batch to manage and execute the SageMaker Processing Jobs for data preprocessing.
+Use AWS Glue to preprocess and clean the text data and store the output in Amazon S3.
+Create a SageMaker Processing Job to preprocess the text data, generate embeddings, and store the output in Amazon S3.
+Deploy a custom Amazon ECS cluster on AWS Fargate to run the preprocessing scripts.
+Use Amazon S3 Event Notifications to trigger an AWS Step Functions workflow for data preprocessing.
