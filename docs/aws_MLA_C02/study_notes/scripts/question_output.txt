@@ -1,4 +1,4 @@
-### Question: Orchestrating CI/CD for ML Workloads
+### Question: Selecting a cost-effective, fully managed hosting for a 2 GB custom ML model with variable traffic
 
 **Category:** MLA – Deployment and Orchestration of ML and AI Workflows
 
@@ -7,27 +7,29 @@
 - [ ] Bucket B (Missed Constraint)
 - [ ] Bucket C (Knowledge Gap)
 
-A manufacturing company wants to develop a machine learning (ML) model for predicting equipment failures and optimizing maintenance schedules. The company has a team of data scientists who have developed custom Python scripts for data preprocessing, feature engineering, and model training. The company wants to leverage AWS services to build, train, and deploy its ML models in a scalable and automated manner.
+A logistics company relies on a 2 GB custom machine learning model hosted in an on-premises environment to forecast delivery times. The company needs to migrate this model to AWS to lower operational overhead and use a fully managed service. The model experiences unpredictable traffic with peak loads during business hours and low activity at night and on weekends. The solution must scale automatically based on demand and be cost-effective during idle times.
 
-Which AWS service should the company use to orchestrate continuous integration and continuous deployment (CI/CD) pipeline?
+Which AWS service is the most suitable for these requirements?
 
-* **A)** AWS CodePipeline
-* **B)** Amazon CodeGuru Reviewer
-* **C)** AWS CodeDeploy
-* **D)** AWS CodeBuild
+* **A)** Use AWS Lambda to host the model, loading it from Amazon S3 on each invocation.
+* **B)** Deploy the model as a serverless SageMaker AI endpoint with Provisioned Concurrency.
+* **C)** Deploy the model as a serverless SageMaker AI endpoint without Provisioned Concurrency.
+* **D)** Use Amazon SageMaker AI real-time endpoints with auto-scaling enabled.
 
 ??? note "Click to reveal Answer & Explanation"
-    **Correct Answer:** **A**
+    **Correct Answer:** **C**
 
     #### Correct Option Analysis
-    * **A is Correct:** AWS CodePipeline is a fully managed continuous integration and continuous delivery (CI/CD) service. It is designed to automate the build, test, and deploy phases of your release process. This makes it the correct "orchestration" tool, as it can string together other services (like CodeBuild and CodeDeploy) into a single automated workflow for the ML models.
+    * **C is Correct:** A **SageMaker AI serverless endpoint without Provisioned Concurrency** is fully managed, automatically scales with demand, and can scale to zero when there is no traffic. This makes it highly cost-effective for workloads with peak business-hour traffic and low or no usage at night and on weekends. It also supports hosting larger models like the 2 GB model described.
 
     #### Distractor Analysis
-    * **B is Incorrect:** Amazon CodeGuru Reviewer is an automated code review service that uses machine learning to identify critical issues, security vulnerabilities, and hard-to-find bugs in your code. It is not used to *orchestrate* pipelines but rather to analyze code quality *within* a build stage.
-    * **C is Incorrect:** AWS CodeDeploy is a deployment service that automates code deployments to any instance (EC2, Lambda, on-premises). While it is often triggered *by* a pipeline, it is just one component of the CI/CD process, not the overall orchestration engine that coordinates the different stages.
-    * **D is Incorrect:** AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages. Like CodeDeploy, it is a critical part of a pipeline but serves as a specific build stage rather than the orchestrator that ties stages (build -> deploy) together.
+    * **A is Incorrect:** AWS Lambda is not suitable for hosting a 2 GB model. Lambda has deployment package size limits that are far smaller, and loading a large model from Amazon S3 on every invocation introduces high latency and cost.
+    * **B is Incorrect:** Provisioned Concurrency on a serverless endpoint keeps capacity warm to reduce cold starts, but it also incurs costs even when there is no traffic. This conflicts with the requirement to be cost-effective during idle times.
+    * **D is Incorrect:** SageMaker AI real-time endpoints with auto-scaling can scale based on demand, but they do not scale to zero. An endpoint typically requires at least one instance running, which continues to incur charges during periods of low or no activity.
 
-    > **Key Takeaway:** Understand the distinct roles of AWS Developer/Tooling services. **CodePipeline** is the orchestrator that integrates services like **CodeBuild** (Build) and **CodeDeploy** (Deploy). If the question asks for a service to "orchestrate" or "automate steps," CodePipeline is usually the right choice.
+    > **Key Takeaway:** For intermittent ML inference workloads requiring automatic scaling and cost-effectiveness during idle periods, choose **SageMaker AI Serverless Inference without Provisioned Concurrency**. Provisioned concurrency is useful for low-latency, predictable workloads but is not cost-effective for idle periods.
 
 ??? warning "self-notes"
     <space for user to write self notes>
+
+---

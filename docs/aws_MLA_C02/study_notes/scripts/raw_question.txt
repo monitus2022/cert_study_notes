@@ -1,9 +1,9 @@
 Category: MLA – Deployment and Orchestration of ML and AI Workflows
-A manufacturing company wants to develop a machine learning (ML) model for predicting equipment failures and optimizing maintenance schedules. The company has a team of data scientists who have developed custom Python scripts for data preprocessing, feature engineering, and model training. The company wants to leverage AWS services to build, train, and deploy its ML models in a scalable and automated manner.
+A logistics company relies on a 2 GB custom machine learning model hosted in an on-premises environment to forecast delivery times. The company needs to migrate this model to AWS to lower operational overhead and use a fully managed service. The model experiences unpredictable traffic with peak loads during business hours and low activity at night and on weekends. The solution must scale automatically based on demand and be cost-effective during idle times.
 
-Which AWS service should the company use to orchestrate continuous integration and continuous deployment (CI/CD) pipeline?
+Which AWS service is the most suitable for these requirements?
 
-AWS CodePipeline
-Amazon CodeGuru Reviewer
-AWS CodeDeploy
-AWS CodeBuild
+Use AWS Lambda to host the model, loading it from Amazon S3 on each invocation.
+Deploy the model as a serverless SageMaker AI endpoint with Provisioned Concurrency.
+Deploy the model as a serverless SageMaker AI endpoint without Provisioned Concurrency.
+Use Amazon SageMaker AI real-time endpoints with auto-scaling enabled.
