@@ -1,0 +1,35 @@
+### Question: Amazon Bedrock Knowledge Base RAG Evaluation Dataset Format (Retrieve-only)
+
+**Category:** MLA – Deployment and Orchestration of ML and AI Workflows  
+
+**Review Bucket:**  
+- [ ] Bucket A (Term Mapping)  
+- [ ] Bucket B (Missed Constraint)  
+- [ ] Bucket C (Knowledge Gap)  
+
+A financial services company is assessing the retrieval quality of an Amazon Bedrock Knowledge Base by configuring a retrieve-only RAG evaluation job. Bedrock will invoke the Knowledge Base during the evaluation, and the company plans to use the Context coverage metric to determine whether retrieved content contains the information represented in the expected answers. An AI engineer must create the input prompt dataset in the format and structure supported by Bedrock.
+
+Which of the following should be implemented?
+
+* **A)** Create a JSONL dataset in which each line contains a `conversationTurns` object with a `prompt` containing the evaluation query and `referenceContexts` containing the expected retrieved passages.
+* **B)** Create a JSONL dataset in which each line contains a `conversationTurns` object with a `referenceResponses` field containing the evaluation query and a `prompt` field containing the expected retrieved passages.
+* **C)** Create a JSONL dataset in which each line contains a `conversationTurns` object with a `prompt` containing the evaluation query and `referenceResponses` containing the expected ground-truth response.
+* **D)** Create a CSV dataset with a `prompt` column containing the evaluation query and a `referenceResponses` column containing the expected ground-truth response.
+
+??? note "Click to reveal Answer & Explanation"
+    **Correct Answer:** **A**
+
+    #### Correct Option Analysis
+    * **A is Correct:** For a **retrieve-only RAG evaluation job**, Bedrock evaluates the knowledge base’s retrieval quality. The input prompt dataset must be in **JSONL** format and each line must contain a `conversationTurns` object. Within it, the `prompt` field holds the evaluation query, and the `referenceContexts` field holds the expected retrieved passages. This is exactly what the **Context coverage** metric requires, as it compares the retrieved contexts against the provided reference contexts.
+
+    #### Distractor Analysis
+    * **B is Incorrect:** The fields are inverted. `referenceResponses` does not contain the evaluation query, and `prompt` should contain the query, not the expected retrieved passages.
+    * **C is Incorrect:** This structure is used for **generate evaluations** where the LLM-generated answer is compared against `referenceResponses`. A retrieve-only RAG evaluation requires `referenceContexts`, not `referenceResponses`.
+    * **D is Incorrect:** RAG evaluation prompt datasets in Bedrock use **JSONL**, not CSV. Additionally, `referenceResponses` is for generation evaluation, not retrieval-only evaluation.
+
+    > **Key Takeaway:** For a retrieve-only RAG evaluation, provide a JSONL dataset with `prompt` for the evaluation query and `referenceContexts` for the expected retrieved passages. Use `referenceResponses` only when evaluating generated answers, not retrieval quality.
+
+??? warning "self-notes"
+    <space for user to write self notes>
+
+---

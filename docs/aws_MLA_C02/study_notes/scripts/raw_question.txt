@@ -1,10 +1,13 @@
 Category: MLA – Deployment and Orchestration of ML and AI Workflows
-A company is developing a sentiment analysis model that processes text data from customer reviews. The company collects and stores these reviews in Amazon S3 buckets. The data preprocessing pipeline involves text cleaning, tokenization, and embedding generation using machine learning frameworks such as TensorFlow and Hugging Face’s Transformers. The processed data is then used for training and fine-tuning the model.
-Which set of actions will accomplish these tasks with the MINIMUM management effort? (Select THREE.)
+A financial services company is assessing the retrieval quality of an Amazon Bedrock Knowledge Base by configuring a retrieve-only RAG evaluation job. Bedrock will invoke the Knowledge Base during the evaluation, and the company plans to use the Context coverage metric to determine whether retrieved content contains the information represented in the expected answers. An AI engineer must create the input prompt dataset in the format and structure supported by Bedrock.
 
-Create an AWS Lambda function to trigger a SageMaker Processing Job when new data is uploaded to the S3 bucket.
-Utilize AWS Batch to manage and execute the SageMaker Processing Jobs for data preprocessing.
-Use AWS Glue to preprocess and clean the text data and store the output in Amazon S3.
-Create a SageMaker Processing Job to preprocess the text data, generate embeddings, and store the output in Amazon S3.
-Deploy a custom Amazon ECS cluster on AWS Fargate to run the preprocessing scripts.
-Use Amazon S3 Event Notifications to trigger an AWS Step Functions workflow for data preprocessing.
+Which of the following should be implemented?
+
+
+Create a JSONL dataset in which each line contains a conversationTurns object with a prompt containing the evaluation query and referenceContexts containing the expected retrieved passages.
+
+Create a JSONL dataset in which each line contains a conversationTurns object with a referenceResponses field containing the evaluation query and a prompt field containing the expected retrieved passages.
+
+Create a JSONL dataset in which each line contains a conversationTurns object with a prompt containing the evaluation query and referenceResponses containing the expected ground-truth response.
+
+Create a CSV dataset with a prompt column containing the evaluation query and a referenceResponses column containing the expected ground-truth response.
