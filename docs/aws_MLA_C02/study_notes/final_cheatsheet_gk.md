@@ -1,10 +1,6 @@
-# AWS MLA-C02 Cheatsheet
+# MLA-C02 Final Cheatsheet
 
-**How to read every question:** business need → hard constraint → smallest service that satisfies both. “Least operational overhead” means managed, unless the constraint demands control.
-
----
-
-# Content Domain 1: Data Preparation for ML and AI
+## Content Domain 1: Data Preparation for ML and AI
 <a name="machine-learning-engineer-associate-02-domain1"></a>
 
 **Topics**
@@ -12,11 +8,11 @@
 + [Task 1.2: Perform data transformation, feature engineering, and pre-processing.](#machine-learning-engineer-associate-02-domain1-task2)
 + [Task 1.3: Validate data quality and manage bias.](#machine-learning-engineer-associate-02-domain1-task3)
 
-## Task 1.1: Collect and store data.
+### Task 1.1: Collect and store data.
 <a name="machine-learning-engineer-associate-02-domain1-task1"></a>
 
 ```mermaid
-flowchart TD
+flowchart LR
   S{"What arrives?"} -->|files, images, text, audio| S3["S3 data lake"]
   S -->|shared POSIX across training nodes| EFS["EFS"]
   S -->|one instance, high IOPS block| EBS["EBS"]
@@ -71,11 +67,11 @@ flowchart TD
 
 ---
 
-## Task 1.2: Perform data transformation, feature engineering, and pre-processing.
+### Task 1.2: Perform data transformation, feature engineering, and pre-processing.
 <a name="machine-learning-engineer-associate-02-domain1-task2"></a>
 
 ```mermaid
-flowchart TD
+flowchart LR
   T{"Who transforms, and how large?"} -->|visual, analyst, profile| DB["Glue DataBrew"]
   T -->|ML features, export to pipeline or Feature Store| DW["SageMaker Data Wrangler"]
   T -->|production lake ETL, catalog, schedule| GL["Glue"]
@@ -131,18 +127,18 @@ Leakage traps: scaler fit before split. Random split on a time series. Future fe
 
 ---
 
-## Task 1.3: Validate data quality and manage bias.
+### Task 1.3: Validate data quality and manage bias.
 <a name="machine-learning-engineer-associate-02-domain1-task3"></a>
 
 ```mermaid
-flowchart TD
+flowchart LR
   Q{"What failed the check?"} -->|schema, nulls, range, freshness| GDQ["Glue Data Quality, stop the pipeline"]
   Q -->|analyst profile| DB["DataBrew"]
   Q -->|group disparity or unexplained prediction| CL["SageMaker Clarify"]
   Q -->|unlabeled| GT["Ground Truth"]
   Q -->|rare class| BAL["Resample, weights, augment, change metric"]
   Q -->|toxic or broken pairs| SAFE["Screen before fine-tune"]
-  Q -->|fraud outliers are the signal"| KEEP["Do not drop outliers"]
+  Q -->|fraud outliers are the signal| KEEP["Do not drop outliers"]
 ```
 
 | Business need | Constraint | Implement |
@@ -171,20 +167,19 @@ flowchart TD
 | Imbalance plus FM fine-tune | Balance pairs or the model collapses to the majority style |
 | Protected attribute absent but ZIP or name remains | Proxy bias. Clarify plus feature review |
 
-<details>
-<summary>Clarify names worth recognizing</summary>
+??? Clarify names worth recognizing
 
-Pre-training: class imbalance, difference in proportions of labels, KL, JS, total variation, Kolmogorov-Smirnov.
+    Pre-training: class imbalance, difference in proportions of labels, KL, JS, total variation, Kolmogorov-Smirnov.
 
-Post-training: disparate impact, difference in positive proportions in predicted labels, accuracy difference, recall difference, treatment equality.
+    Post-training: disparate impact, difference in positive proportions in predicted labels, accuracy difference, recall difference, treatment equality.
 
-If the stem says “which metric detects bias in the training set before fit”, it is a pre-training metric. If it says “predictions favor a group”, it is post-training.
+    If the stem says “which metric detects bias in the training set before fit”, it is a pre-training metric. If it says “predictions favor a group”, it is post-training.
 
-</details>
+
 
 ---
 
-# Content Domain 2: ML Model and Foundation Model (FM) Development
+## Content Domain 2: ML Model and Foundation Model (FM) Development
 <a name="machine-learning-engineer-associate-02-domain2"></a>
 
 **Topics**
@@ -192,18 +187,18 @@ If the stem says “which metric detects bias in the training set before fit”,
 + [Task 2.2: Train, fine-tune, and customize models for ML and AI solutions.](#machine-learning-engineer-associate-02-domain2-task2)
 + [Task 2.3: Analyze and evaluate the performance of ML and AI systems.](#machine-learning-engineer-associate-02-domain2-task3)
 
-## Task 2.1: Choose appropriate modeling approaches for ML and AI solutions.
+### Task 2.1: Choose appropriate modeling approaches for ML and AI solutions.
 <a name="machine-learning-engineer-associate-02-domain2-task1"></a>
 
 ```mermaid
-flowchart TD
+flowchart LR
   N{"What is the job?"} -->|extract doc text, tables, IDs, invoices| TX["Textract"]
   N -->|faces, objects, moderation, custom image labels| RK["Rekognition"]
   N -->|sentiment, entities, PII in text| CP["Comprehend"]
   N -->|speech to text| TR["Transcribe"]
   N -->|speech out or translate or chat intent or recommendations| AIS["Polly, Translate, Lex, Personalize"]
   N -->|generate, reason, tools, private docs| BD["Bedrock"]
-  N -->|tabular or custom CV you must train"| SM["SageMaker AI"]
+  N -->|tabular or custom CV you must train| SM["SageMaker AI"]
 ```
 
 | Business need | Constraint | Implement |
@@ -249,11 +244,11 @@ Trade the stem will force you to name:
 
 ---
 
-## Task 2.2: Train, fine-tune, and customize models for ML and AI solutions.
+### Task 2.2: Train, fine-tune, and customize models for ML and AI solutions.
 <a name="machine-learning-engineer-associate-02-domain2-task2"></a>
 
 ```mermaid
-flowchart TD
+flowchart LR
   M{"Training constraint?"} -->|tabular, standard algorithm| BI["SageMaker built-in"]
   M -->|your loop, PyTorch, TensorFlow, sklearn, Hugging Face| SC["Script mode"]
   M -->|expensive search of hyperparameters| AMT["Automatic model tuning"]
@@ -261,7 +256,7 @@ flowchart TD
   M -->|model fits one GPU, data is huge| DP["Data parallel"]
   M -->|model does not fit one GPU| MP["Model parallel"]
   M -->|GPU waiting on reads| IO["FSx for Lustre or FastFile, not more GPUs"]
-  M -->|FM forgets general skill"| PEFT["Low LR, few epochs, LoRA or PEFT, mix old data"]
+  M -->|FM forgets general skill| PEFT["Low LR, few epochs, LoRA or PEFT, mix old data"]
 ```
 
 | Business need | Constraint | Implement |
@@ -295,46 +290,44 @@ flowchart TD
 | Spot interruption kills the run | Checkpoint interval was missing |
 | Val rises while train falls | Early stop. You are past the useful epoch |
 
-<details>
-<summary>Built-in algorithm crib</summary>
+??? "Built-in algorithm crib"
 
-| Algorithm | Use |
-|---|---|
-| XGBoost | Tabular, classification and regression |
-| Linear Learner | Linear or logistic |
-| K-Means | Clustering |
-| PCA | Dimensionality |
-| Factorization Machines | Sparse recommend or click |
-| Random Cut Forest | Anomaly |
-| IP Insights | IP anomaly |
-| DeepAR | Probabilistic forecast |
-| BlazingText | Word2Vec or text class |
-| Image Classification, Object Detection, Semantic Segmentation | Vision with labels |
-| K-NN | Similarity |
-| LDA, Neural Topic Model | Topics, unsupervised text |
-| Object2Vec | Pair embeddings |
-| Seq2Seq | Classic sequence tasks. Prefer Bedrock if the stem is generative and least-ops |
+    | Algorithm | Use |
+    |---|---|
+    | XGBoost | Tabular, classification and regression |
+    | Linear Learner | Linear or logistic |
+    | K-Means | Clustering |
+    | PCA | Dimensionality |
+    | Factorization Machines | Sparse recommend or click |
+    | Random Cut Forest | Anomaly |
+    | IP Insights | IP anomaly |
+    | DeepAR | Probabilistic forecast |
+    | BlazingText | Word2Vec or text class |
+    | Image Classification, Object Detection, Semantic Segmentation | Vision with labels |
+    | K-NN | Similarity |
+    | LDA, Neural Topic Model | Topics, unsupervised text |
+    | Object2Vec | Pair embeddings |
+    | Seq2Seq | Classic sequence tasks. Prefer Bedrock if the stem is generative and least-ops |
 
-</details>
 
 ---
 
-## Task 2.3: Analyze and evaluate the performance of ML and AI systems.
+### Task 2.3: Analyze and evaluate the performance of ML and AI systems.
 <a name="machine-learning-engineer-associate-02-domain2-task3"></a>
 
 ```mermaid
-flowchart TD
+flowchart LR
   E{"What must you prove?"} -->|reproducible run| MLF["MLflow on SageMaker AI or SageMaker Experiments"]
   E -->|live user metric, risk OK| AB["Production variants, A/B"]
   E -->|compare with zero user risk| SW["Shadow variant"]
   E -->|input stats moved| DD["Model Monitor data quality"]
-  E -->|labels arrived, quality moved"| MQ["Model Monitor model quality"]
-  E -->|group fairness moved"| BD["Bias drift"]
-  E -->|why this row"| SHAP["Clarify SHAP"]
-  E -->|translation or summary overlap"| NG["BLEU or ROUGE"]
-  E -->|meaning, not n-grams"| BS["BERTScore or embedding similarity"]
-  E -->|answer stuck to retrieved text"| GR["Faithfulness or grounding"]
-  E -->|no single reference"| HUM["Human eval or LLM-as-judge with a rubric"]
+  E -->|labels arrived, quality moved| MQ["Model Monitor model quality"]
+  E -->|group fairness moved| BD["Bias drift"]
+  E -->|why this row| SHAP["Clarify SHAP"]
+  E -->|translation or summary overlap| NG["BLEU or ROUGE"]
+  E -->|meaning, not n-grams| BS["BERTScore or embedding similarity"]
+  E -->|answer stuck to retrieved text| GR["Faithfulness or grounding"]
+  E -->|no single reference| HUM["Human eval or LLM-as-judge with a rubric"]
 ```
 
 | Business need | Constraint | Implement |
@@ -367,29 +360,31 @@ Regression stems: RMSE or MAE. Ranked lists: NDCG. Perplexity measures LM fit, n
 
 ---
 
-# Content Domain 3: Deployment and Orchestration of ML and AI Workflows
+## Content Domain 3: Deployment and Orchestration of ML and AI Workflows
 <a name="machine-learning-engineer-associate-02-domain3"></a>
 
 **Topics**
-+ [Task 3.1: Manage deployment infrastructure for ML and AI model types.](#machine-learning-engineer-associate-02-domain3-task1)
-+ [Task 3.2: Provision and configure resources for ML and AI workloads based on existing architecture and requirements.](#machine-learning-engineer-associate-02-domain3-task2)
-+ [Task 3.3: Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.](#machine-learning-engineer-associate-02-domain3-task3)
+- [Content Domain 4: Operating, Monitoring, and Securing ML and AI Solutions](#content-domain-4-operating-monitoring-and-securing-ml-and-ai-solutions)
+    - [Task 4.1: Monitor ML and AI model inference and performance.](#task-41-monitor-ml-and-ai-model-inference-and-performance)
+    - [Task 4.2: Optimize and manage ML and AI infrastructure costs and performance.](#task-42-optimize-and-manage-ml-and-ai-infrastructure-costs-and-performance)
+    - [Task 4.3: Secure ML and AI workloads and model endpoints.](#task-43-secure-ml-and-ai-workloads-and-model-endpoints)
+    - [Last-minute signal index](#last-minute-signal-index)
 
-## Task 3.1: Manage deployment infrastructure for ML and AI model types.
+### Task 3.1: Manage deployment infrastructure for ML and AI model types.
 <a name="machine-learning-engineer-associate-02-domain3-task1"></a>
 
 ```mermaid
-flowchart TD
-  I{"Inference shape?"} -->|ms latency, steady| RT["SageMaker real-time endpoint"]
-  I -->|spiky, idle most of the day, cold start OK| SV["Serverless Inference"]
-  I -->|large payload, seconds to minutes, queue OK| AS["Async Inference"]
-  I -->|nightly file to file, no endpoint"| BT["Batch Transform"]
-  I -->|many models, one container, save cost"| MM["Multi-model endpoint"]
-  I -->|preprocess then model then postprocess"| IP["Inference pipeline, multi-container"]
-  I -->|bring a container or existing orchestrator"| EX["ECS, EKS, or EC2"]
-  I -->|FM, variable tokens"| OD["Bedrock on-demand"]
-  I -->|FM, hard latency, committed QPS"| PT["Bedrock Provisioned Throughput"]
-  I -->|weights trained outside"| IMP["Bedrock Custom Model Import or SageMaker"]
+flowchart LR
+  I{"Inference shape?"} -->|"ms latency, steady"| RT["SageMaker real-time endpoint"]
+  I -->|"spiky, idle most of the day, cold start OK"| SV["Serverless Inference"]
+  I -->|"large payload, seconds to minutes, queue OK"| AS["Async Inference"]
+  I -->|"nightly file to file, no endpoint"| BT["Batch Transform"]
+  I -->|"many models, one container, save cost"| MM["Multi-model endpoint"]
+  I -->|"preprocess then model then postprocess"| IP["Inference pipeline, multi-container"]
+  I -->|"bring a container or existing orchestrator"| EX["ECS, EKS, or EC2"]
+  I -->|"FM, variable tokens"| OD["Bedrock on-demand]
+  I -->|"FM, hard latency, committed QPS"| PT["Bedrock Provisioned Throughput"]
+  I -->|"weights trained outside"| IMP["Bedrock Custom Model Import or SageMaker"]
 ```
 
 | Business need | Constraint | Implement |
@@ -419,16 +414,16 @@ Agent communication: tools via MCP or action groups. Multi-agent only if the ste
 
 ---
 
-## Task 3.2: Provision and configure resources for ML and AI workloads based on existing architecture and requirements.
+### Task 3.2: Provision and configure resources for ML and AI workloads based on existing architecture and requirements.
 <a name="machine-learning-engineer-associate-02-domain3-task2"></a>
 
 ```mermaid
-flowchart TD
+flowchart LR
   P{"Capacity pattern?"} -->|unpredictable train| OD["On-demand"]
   P -->|train can restart from checkpoint| SP["Spot"]
-  P -->|endpoint steady 24 by 7"| SVP["Savings Plan or reserved"]
-  P -->|GPU memory is the bottleneck"| GPU["Scale on GPU memory or GPU util, not CPU"]
-  P -->|private RDS or no public internet"| VPC["Private subnet, security groups, VPC endpoints"]
+  P -->|endpoint steady 24 by 7| SVP["Savings Plan or reserved"]
+  P -->|GPU memory is the bottleneck| GPU["Scale on GPU memory or GPU util, not CPU"]
+  P -->|private RDS or no public internet| VPC["Private subnet, security groups, VPC endpoints"]
 ```
 
 | Business need | Constraint | Implement |
@@ -470,7 +465,7 @@ VPC trap: timeout or cannot connect is route, security group, NACL, or missing e
 
 ---
 
-## Task 3.3: Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.
+### Task 3.3: Implement automated orchestration and continuous integration and continuous delivery (CI/CD) pipelines for MLOps and AI workloads.
 <a name="machine-learning-engineer-associate-02-domain3-task3"></a>
 
 ```mermaid
@@ -517,28 +512,30 @@ Gates worth putting in the pipeline: schema and data-quality, metric vs champion
 
 ---
 
-# Content Domain 4: Operating, Monitoring, and Securing ML and AI Solutions
+## Content Domain 4: Operating, Monitoring, and Securing ML and AI Solutions
 <a name="machine-learning-engineer-associate-02-domain4"></a>
 
 **Topics**
-+ [Task 4.1: Monitor ML and AI model inference and performance.](#machine-learning-engineer-associate-02-domain4-task1)
-+ [Task 4.2: Optimize and manage ML and AI infrastructure costs and performance.](#machine-learning-engineer-associate-02-domain4-task2)
-+ [Task 4.3: Secure ML and AI workloads and model endpoints.](#machine-learning-engineer-associate-02-domain4-task3)
+- [Content Domain 4: Operating, Monitoring, and Securing ML and AI Solutions](#content-domain-4-operating-monitoring-and-securing-ml-and-ai-solutions)
+    - [Task 4.1: Monitor ML and AI model inference and performance.](#task-41-monitor-ml-and-ai-model-inference-and-performance)
+    - [Task 4.2: Optimize and manage ML and AI infrastructure costs and performance.](#task-42-optimize-and-manage-ml-and-ai-infrastructure-costs-and-performance)
+    - [Task 4.3: Secure ML and AI workloads and model endpoints.](#task-43-secure-ml-and-ai-workloads-and-model-endpoints)
+    - [Last-minute signal index](#last-minute-signal-index)
 
-## Task 4.1: Monitor ML and AI model inference and performance.
+### Task 4.1: Monitor ML and AI model inference and performance.
 <a name="machine-learning-engineer-associate-02-domain4-task1"></a>
 
 ```mermaid
-flowchart TD
-  M{"What moved?"} -->|inputs| DQ["Data-quality drift"]
-  M -->|outputs, no labels yet"| PD["Prediction drift, investigate"]
-  M -->|labels vs predictions"| MQ["Model-quality drift, retrain or roll back"]
-  M -->|groups"| BZ["Bias drift, Clarify"]
-  M -->|which features drive the score"| FA["Feature-attribution drift"]
-  M -->|endpoint errors or latency"| CW["CloudWatch alarm"]
-  M -->|FM tokens, tool trace, blocked rails"| GEN["Bedrock logs, evaluations, AgentCore Observability"]
-  M -->|two live variants"| AB["A/B"]
-  M -->|candidate only"| SW["Shadow"]
+flowchart LR
+  M{"What moved?"} -->|"inputs"| DQ["Data-quality drift"]
+  M -->|"outputs, no labels yet"| PD["Prediction drift, investigate"]
+  M -->|"labels vs predictions"| MQ["Model-quality drift, retrain or roll back"]
+  M -->|"groups"| BZ["Bias drift, Clarify"]
+  M -->|"which features drive the score"| FA["Feature-attribution drift"]
+  M -->|"endpoint errors or latency"| CW["CloudWatch alarm"]
+  M -->|"FM tokens, tool trace, blocked rails"| GEN["Bedrock logs, evaluations, AgentCore Observability"]
+  M -->|"two live variants"| AB["A/B"]
+  M -->|"candidate only"| SW["Shadow"]
 ```
 
 | Business need | Constraint | Implement |
@@ -568,19 +565,19 @@ flowchart TD
 
 ---
 
-## Task 4.2: Optimize and manage ML and AI infrastructure costs and performance.
+### Task 4.2: Optimize and manage ML and AI infrastructure costs and performance.
 <a name="machine-learning-engineer-associate-02-domain4-task2"></a>
 
 ```mermaid
-flowchart TD
-  C{"Bill driver?"} -->|endpoint left up"| DEL["Delete endpoint, stop notebooks"]
-  C -->|nightly score on a real-time fleet"| BAT["Batch Transform"]
-  C -->|many cold models on dedicated boxes"| MME["Multi-model endpoint"]
-  C -->|classical model on a GPU"| CPU["CPU or Inference Recommender"]
-  C -->|train on demand, can checkpoint"| SPOT["Managed Spot"]
-  C -->|FM token bill"| TOK["Smaller model, shorter context, cache, distill, batch"]
-  C -->|idle provisioned FM"| OD["On-demand unless latency forbids"]
-  C -->|re-embed entire corpus nightly"| INC["Incremental index, lifecycle old vectors"]
+flowchart LR
+  C{"Bill driver?"} -->|"endpoint left up"| DEL["Delete endpoint, stop notebooks"]
+  C -->|"nightly score on a real-time fleet"| BAT["Batch Transform"]
+  C -->|"many cold models on dedicated boxes"| MME["Multi-model endpoint"]
+  C -->|"classical model on a GPU"| CPU["CPU or Inference Recommender"]
+  C -->|"train on demand, can checkpoint"| SPOT["Managed Spot"]
+  C -->|"FM token bill"| TOK["Smaller model, shorter context, cache, distill, batch"]
+  C -->|"idle provisioned FM"| OD["On-demand unless latency forbids"]
+  C -->|"re-embed entire corpus nightly"| INC["Incremental index, lifecycle old vectors"]
 ```
 
 | Business need | Constraint | Implement |
@@ -606,19 +603,19 @@ Production FM cost is input tokens plus output tokens, times retries, times agen
 
 ---
 
-## Task 4.3: Secure ML and AI workloads and model endpoints.
+### Task 4.3: Secure ML and AI workloads and model endpoints.
 <a name="machine-learning-engineer-associate-02-domain4-task3"></a>
 
 ```mermaid
-flowchart TD
-  SEC{"Control needed?"} -->|who may call"| IAM["IAM role, least privilege, no long-lived keys"]
-  SEC -->|disk and artifact"| KMS["KMS, key policy and IAM"]
-  SEC -->|no public path"| VPC["Private subnets, security groups, endpoints"]
-  SEC -->|find sensitive files"| MAC["Macie"]
-  SEC -->|block or mask at inference"| GR["Bedrock Guardrails"]
-  SEC -->|who called the API"| CT["CloudTrail"]
-  SEC -->|resource drifted from a rule"| CFG["Config"]
-  SEC -->|bad image or bad code in CI"| SCN["Inspector and CodeGuru"]
+flowchart LR
+  SEC{"Control needed?"} -->|"who may call"| IAM["IAM role, least privilege, no long-lived keys"]
+  SEC -->|"disk and artifact"| KMS["KMS, key policy and IAM"]
+  SEC -->|"no public path"| VPC["Private subnets, security groups, endpoints"]
+  SEC -->|"find sensitive files"| MAC["Macie"]
+  SEC -->|"block or mask at inference"| GR["Bedrock Guardrails"]
+  SEC -->|"who called the API"| CT["CloudTrail"]
+  SEC -->|"resource drifted from a rule"| CFG["Config"]
+  SEC -->|"bad image or bad code in CI"| SCN["Inspector and CodeGuru"]
 ```
 
 | Business need | Constraint | Implement |
@@ -664,7 +661,7 @@ Network isolation on a training job is not the same switch as VPC config. Isolat
 
 ---
 
-## Last-minute signal index
+### Last-minute signal index
 
 | Stem | Answer shape |
 |---|---|
