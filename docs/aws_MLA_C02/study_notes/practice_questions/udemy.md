@@ -1,5 +1,4 @@
-# AWS Certified Machine Learning Engineer - Associate (MLA-C02)
-## Udemy Full-Length Practice Exam (65 Questions)
+# Udemy Full-Length Practice Exam (65 Questions)
 
 **Overall Exam Score:** **59 / 65 (90.8%)** | **Status:** :white_check_mark: **PASS**
 
@@ -2223,4 +2222,4 @@ Which approach should the team use?
 
 ### Disclaimer
 
-This quiz is included in Udemy MLA-C02 Course by Frank Kane and Stephane Maarek. Enclosed quiz is included in course and for exam review purpose only and is fully non-profitable. All materials are copyright from their original author and AWS.
+This quiz is included in Udemy MLA-C02 Course by Frank Kane and Stephane Maarek. Enclosed quiz is included in course and for exam review purpose only and is fully non-profitable. All materials are copyright from their original author and AWS. If it is involved in any copyright issue, please contact site owner.
