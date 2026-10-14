@@ -2,38 +2,6 @@
 
 **How to read every question:** business need → hard constraint → smallest service that satisfies both. “Least operational overhead” means managed, unless the constraint demands control.
 
-```mermaid
-flowchart TD
-  Q["Underline need and constraint"] --> C{"Which constraint wins?"}
-  C -->|"least ops, task matches a managed AI API"| AI["AI service or Bedrock, not a training job"]
-  C -->|"your labels, custom model, full control"| SM["SageMaker AI"]
-  C -->|"facts change, citations, private docs"| RAG["RAG, not fine-tune"]
-  C -->|"style, format, stable behavior"| FT["Prompt, then fine-tune"]
-  C -->|"must not affect users"| SH["Shadow variant"]
-  C -->|"no internet, private data"| VPC["VPC plus endpoints plus KMS"]
-  C -->|"cost of an always-on box"| CHEAP["Batch, serverless, spot, or multi-model"]
-```
-
-| Phrase in the stem | Do not pick |
-|---|---|
-| Least operational overhead | Self-managed cluster, custom consumer, EC2 babysitting |
-| No impact on users | Production A/B |
-| Labels arrive later | Model-quality monitor as the only signal |
-| Knowledge updated weekly | Fine-tune as the first move |
-| Accuracy on a 2% positive class | Accuracy |
-| Timeout to S3 or API | IAM. Timeout is network |
-| AccessDenied | Security group. Denied is IAM or KMS key policy |
-| Outliers are the fraud signal | Drop outliers |
-
-<details>
-<summary>In scope vs do-not-pick</summary>
-
-In scope and commonly the answer: S3, EBS, EFS, FSx, Glacier, Kinesis, Data Firehose, Managed Flink, Glue, DataBrew, Glue Data Quality, EMR, Athena, Lake Formation, OpenSearch, RDS, DynamoDB, Redshift, Neptune, ElastiCache, Lambda, EC2, Batch, ECR, ECS, EKS, Step Functions, EventBridge, MWAA, SNS, SQS, SageMaker AI, Bedrock, Bedrock AgentCore, Rekognition, Textract, Comprehend, Transcribe, Polly, Translate, Lex, Personalize, CodePipeline, CodeBuild, CodeDeploy, CodeCommit, CodeConnections, CloudFormation, CDK, CloudWatch, CloudTrail, Config, X-Ray, IAM, KMS, Macie, Inspector, CodeGuru, Secrets Manager, VPC, API Gateway, Budgets, Cost Explorer, Compute Optimizer.
-
-Out of scope, so not the intended answer: GuardDuty, WAF, Shield, Cognito, Security Hub, CloudHSM, Elastic Beanstalk, Amplify, CodeCatalyst, SES, IoT services.
-
-</details>
-
 ---
 
 # Content Domain 1: Data Preparation for ML and AI
