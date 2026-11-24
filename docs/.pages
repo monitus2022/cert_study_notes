@@ -1,0 +1,12 @@
+nav:
+  - Home: index.md
+  - Notes: notes
+  - Practice: practice
+  - Projects: projects
+  - Coding & SQL: coding
+  - Certifications:
+      - Overview: certifications.md
+      - aws_AIF_C01
+      - aws_CLF_C02
+      - aws_MLA_C02
+  - Tools: tools

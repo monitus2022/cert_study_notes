@@ -1,13 +1,22 @@
-# cert_study_notes
+# Engineering Notes
 
-This repo contains my study notes created / generated for preparing IT Professional Examinations.
+Working notes on applied AI systems, cloud platforms, and software engineering.
+
+The site is organised into reference notes, practice material, and design records:
+
+- **Notes** — chapter notes, paper summaries, videos, and articles.
+- **Practice** — question bank and scenario drills.
+- **Projects** — three flagship builds with evaluations, results, and design review questions.
+- **Coding & SQL** — short drills in Python, JSON, and SQL.
+- **Certifications** — AWS AIF-C01, CLF-C02, and MLA-C02 notes.
+- **Tools** — small utilities used while studying and building.
 
 ## Requirements
 
-You can read notes in the repository or build the documentation locally using [MkDocs](https://www.mkdocs.org/).
+Read the notes in the repository, or build the documentation locally with [MkDocs](https://www.mkdocs.org/).
 
 ```bash
-pip install mkdocs
+pip install -r requirements.txt
 mkdocs serve
 ```
 

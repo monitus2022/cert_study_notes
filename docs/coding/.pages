@@ -1,0 +1,5 @@
+nav:
+  - index.md
+  - Python: python
+  - JSON: json
+  - SQL: sql
