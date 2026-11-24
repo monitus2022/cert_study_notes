@@ -12,4 +12,4 @@ JSON drills focus on the boundary between a model and the rest of the system: pa
 
 ## Drills
 
-Start with [the example drill](example-drill.md). Replace it with a real drill when ready.
+Start with [Parse a Model Response](parse-model-output.md), a structured-output parsing drill.

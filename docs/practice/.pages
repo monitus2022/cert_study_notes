@@ -1,1 +1,3 @@
-title: Practice
+nav:
+  - index.md
+  - Cost of a 1M-Request Assistant: rag-cost-estimate.md

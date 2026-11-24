@@ -4,4 +4,4 @@ SQL drills use small, explicit schemas so the query logic is the only thing unde
 
 ## Drills
 
-Start with [the example query](example-query.md). Replace it with the first real drill when ready.
+Start with [Monthly Revenue and Growth](monthly-revenue-growth.md), an aggregation and window-function drill.

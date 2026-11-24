@@ -10,7 +10,7 @@ Notes from books, videos, articles, and courses. Each note records the source, t
 
 ## Notes
 
+- [Lost in the Middle](lost-in-the-middle.md) — why a longer context window does not remove position effects.
 - [AI Engineering](ai-engineering/index.md) — chapter notes and question sets.
-- [Example note](example-note.md) — format placeholder for a book, video, or article.
 
 Add new notes as separate pages or as a folder when a source has multiple chapters.

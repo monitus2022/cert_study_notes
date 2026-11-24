@@ -25,4 +25,4 @@ A question bank for testing recall and design judgement. Items are grouped by to
 
 ## Items
 
-Start with [the example item](example-question.md). Replace it with the first real item when ready.
+Start with [the cost estimate](rag-cost-estimate.md), a worked numerical item for a RAG assistant.

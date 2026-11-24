@@ -10,4 +10,4 @@ Python drills for applied AI work. Each item is a single function or a small deb
 
 ## Drills
 
-Start with [the example drill](example-drill.md). Replace it with a real drill when ready.
+Start with [Reciprocal Rank Fusion](reciprocal-rank-fusion.md), a hybrid-retrieval primitive.
